@@ -1,13 +1,170 @@
+{#
+   This is the base template used as the application layout which contains the
+   common elements and decorates all the other templates.
+   See http://symfony.com/doc/current/book/templating.html#template-inheritance-and-layouts
+#}
+
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
-        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
-    </body>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>{% block title %}SoftUni Blog{% endblock %}</title>
+    {% block stylesheets %}
+        <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    {% endblock %}
+</head>
+
+<body id="{% block body_id %}{% endblock %}">
+
+{% block header %}
+    <header class="site-header">
+        <div class="site-info-bar">
+            <div class="icons">
+                <i class="fab fa-facebook-f"></i>
+                <i class="fab fa-twitter"></i>
+                <i class="fab fa-google-plus-g"></i>
+            </div>
+            <div class="contacts">
+                <p><i class="fas fa-phone"></i> +359 88 44 44 44</p>
+                <p><i class="fas fa-envelope"></i> contact@coffeeshop.com</p>
+            </div>
+        </div>
+        <div class="site-navigation-bar" id="navigation-bar">
+            <div class="site-title">
+                <a href="/"><span>Coffee</span> Shop</a>
+            </div>
+            <label for="main-nav-toggle" id="toggle"></label>
+            <nav class="main" id="main-navigation">
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/about/">About Us</a></li>
+                    <li>
+                        <a>Products</a>
+                        <ul>
+                            <li><a href="/beans/">Coffee beans</a></li>
+                            <li>
+                                <a href="/machines/">Coffee machines</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <!--<li><a href="/events/">Events</a></li>-->
+                    <li><a href="/blog/index.html">Blog</a></li>
+                    <li><a href="/contacts/">Contacts</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="site-header-slogan">
+            <h1>
+                All you need to feel better is coffee
+            </h1>
+            <p>Make yourself useful. Have a coffee break.</p>
+            <form action="/machines/">
+                <input class="main-button" type="submit" value="Best Offers">
+            </form>
+        </div>
+        {#<div class="navbar navbar-default navbar-static-top" role="navigation">#}
+            {#<div class="container">#}
+                {#<div class="navbar-header">#}
+                    {#<a href="{{ path('blog_index') }}" class="navbar-brand">SOFTUNI BLOG</a>#}
+                    {#{% if app.user %}#}
+                        {#<a href="{{ path('article_create') }}" class="navbar-brand">#}
+                            {#Create Article#}
+                        {#</a>#}
+                    {#{% endif %}#}
+                    {#<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">#}
+                        {#<span class="icon-bar"></span>#}
+                        {#<span class="icon-bar"></span>#}
+                        {#<span class="icon-bar"></span>#}
+                    {#</button>#}
+                {#</div>#}
+                {#<div class="navbar-collapse collapse">#}
+                    {#<ul class="nav navbar-nav navbar-right">#}
+                        {#{% if app.user %}#}
+                            {#<li>#}
+                                {#<a href="{{ path('user_profile') }}">#}
+                                    {#My Profile#}
+                                {#</a>#}
+                            {#</li>#}
+                            {#<li>#}
+                                {#<a href="{{ path('security_logout') }}">#}
+                                    {#Logout#}
+                                {#</a>#}
+                            {#</li>#}
+                        {#{% else %}#}
+                            {#<li>#}
+                                {#<a href="{{ path('user_register') }}">#}
+                                    {#REGISTER#}
+                                {#</a>#}
+                            {#</li>#}
+                            {#<li>#}
+                                {#<a href="{{ path('security_login') }}">#}
+                                    {#LOGIN#}
+                                {#</a>#}
+                            {#</li>#}
+                        {#{% endif %}#}
+                    {#</ul>#}
+                {#</div>#}
+            {#</div>#}
+        {#</div>#}
+    {#</header>#}
+{% endblock %}
+
+        {% block main %}
+
+        {% endblock %}
+
+
+{% block footer %}
+    <footer class="site-footer">
+        <div class="footer flex">
+            <section class="about-footer">
+                <div class="footer-title">
+                    <h5>
+                        <a href=""><span>Coffee</span> Shop</a>
+                    </h5>
+                    <div class="icons">
+                        <i class="fab fa-facebook-f"></i>
+                        <i class="fab fa-twitter"></i>
+                        <i class="fab fa-google-plus-g"></i>
+                    </div>
+                </div>
+                <p>
+                    At the Coffee Shop we offer only the highest class of Arabica and Robusta coffee beans,
+                    carefully selected according to the seasonal specifics of the harvest and the regions of origin.
+                </p>
+            </section>
+            <section class="sitemap-footer">
+
+                <h5>QUICK LINKS</h5>
+
+                <ul>
+                    <li><a href="">Home</a></li>
+                    <li><a href="/about/">About</a></li>
+                    <li><a href="/blog/index.html">Blog</a></li>
+                    <li><a href="/contacts/">Contacts</a></li>
+                </ul>
+            </section>
+
+            <section class="contacts-footer">
+
+                <h5>CONTACT INFO</h5>
+
+                <ul>
+                    <li><i class="fas fa-phone-volume"></i> +359 88 44 44 44</li>
+                    <li><i class="fas fa-envelope"></i> contacts@coffeeshop.com</li>
+                    <li><i class="fas fa-clock"></i> Monday - Friday: 09:00 - 18:00</li>
+                    <li><i class="fas fa-map-marked"></i> Sofia,<br>Opalchenska 244 fl. 1</li>
+                </ul>
+            </section>
+        </div>
+        <div class="final">
+            <p>© 2018 Coffee Shop . All rights reserved | Design by Doncho Mitev.</p>
+        </div>
+
+    </footer>
+{% endblock %}
+
+</body>
 </html>
+
