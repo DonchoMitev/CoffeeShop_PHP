@@ -1,0 +1,128 @@
+nav.main {
+  ul {
+    display: flex;
+    padding: 0.5rem;
+    border-radius: 0.3rem;
+    margin: 0;
+
+    li {
+      display: block;
+      list-style: none outside;
+      position: relative;
+      padding: 0 0.5rem 0 0;
+
+      &:hover > ul {
+        display: block;
+
+      }
+
+      &:hover > a {
+        background: $primary-color;
+        color: white;
+        @include easeOut;
+
+      }
+
+      &:hover:nth-child(3) > a {
+        cursor: default;
+        transform: none;
+      }
+
+      a {
+        display: block;
+        padding: 0.5rem 1rem;
+        border: 1px solid $primary-color;
+        border-radius: 0.4rem;
+        text-decoration: none;
+        background: burlywood;
+        color: #000;
+
+        &:hover {
+          background: $primary-color;
+          border: 1px solid white;
+          color: white;
+          transform: scale(1.05);
+          @include easeOut;
+        }
+      }
+    }
+
+    ul {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: -0.5rem;
+      width: 11rem;
+
+
+      li:not(:last-child) {
+        padding-bottom: 0.5rem;
+      }
+    }
+  }
+
+  @include mq(tablet, max){
+    display: none;
+    & ul li:not(:first-child) {
+      padding-top: 0.5rem;
+    }
+  }
+}
+
+#main-nav-toggle,
+#toggle {
+  display: none;
+  cursor: pointer;
+
+}
+
+#toggle {
+  position: relative;
+  flex: 1 0 100%;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  //border: 0.5px $primary-color dotted;
+  padding: 1rem 0;
+  @include mq(tablet, max) {
+    display: flex;
+    margin: 0 auto;
+  }
+}
+
+#toggle:before {
+  display: block;
+  content: '\2630';
+  padding-right: 0.3rem;
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+@media screen and (max-width: 768px) {
+  #main-nav-toggle:checked + .site-header .site-navigation-bar nav.main {
+    display: block;
+    flex: 1 0 100%;
+    ul {
+      display: block;
+    }
+
+    li > ul {
+      display: none;
+    }
+
+    & li:hover > ul {
+      display: block;
+      width: 100%;
+      position: relative;
+    }
+
+    & ul ul li {
+      padding-left: 2rem;
+    }
+  }
+
+  #main-nav-toggle:checked + .site-header .site-navigation-bar #toggle:before {
+    content: '\d7';
+  }
+}
+
