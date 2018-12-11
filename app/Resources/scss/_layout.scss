@@ -1,0 +1,349 @@
+body {
+  background: rgba(218, 178, 130, 0.39);
+}
+
+//main style
+.site {
+  $cn: &;
+
+  @at-root #{$cn}-content {
+    max-width: 70rem;
+    margin: 0 auto;
+    padding: 2rem;
+
+    & > section {
+      margin-top: 7rem;
+    }
+
+  }
+}
+
+//Sections Coffee main, Top Products, Services, Blog
+section .flex {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: 5rem 0;
+
+  div.card {
+    text-align: center;
+  }
+
+  .desc {
+    padding: 3rem;
+    text-align: center;
+  }
+}
+
+// style title - all sections titles
+.section-title {
+  text-align: center;
+  margin-bottom: 2rem;
+
+  h2 {
+    color: $primary-color;
+  }
+
+  .flex-coffee-under {
+    width: 13rem;
+    margin: auto;
+    display: flex;
+    @include mq(phone, max) {
+      width: 11rem;
+    }
+
+    .hr-line {
+      width: 100%;
+      position: relative;
+      margin: 0.8rem;
+      border-bottom: 2px solid #000;
+    }
+    .icon {
+      position: relative;
+      top: 3px;
+      color: $primary-color;
+    }
+  }
+
+  .page {
+    .flex-coffee-under {
+      width: 80%;
+    }
+  }
+}
+
+//First Section - home page - Coffee main
+section.coffee-main {
+  width: 80%;
+  margin: auto;
+  text-align: center;
+
+  p {
+    color: #1b1b1b;
+    text-shadow: 2px 2px white;
+  }
+
+}
+
+//Wrapper img - beans, machines, top-products
+.wrapper-img{
+  width: 17rem;
+  height: auto;
+}
+
+//Second Section Top Products - home page
+section.top-products .product {
+  flex: 0 0 10rem;
+  text-align: center;
+  position: relative;
+  cursor: pointer;
+  margin: 1rem;
+
+  img {
+    width: 100%;
+    height: auto;
+    border: 2px solid $primary-color;
+    border-radius: 5px;
+  }
+
+  .details {
+    width: 70%;
+    height: 80%;
+    padding: 0.5rem 0.8rem;
+    position: absolute;
+    content: "";
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotateY(90deg);
+    transform-origin: 50%;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 6px;
+    opacity: 0;
+    transition: all 0.4s ease-in;
+
+  }
+
+  &:hover .details {
+    transform: translate(-50%, -50%) rotateY(0deg);
+    opacity: 1;
+  }
+}
+
+//Third Section Our Services - home page
+section.our-services .services {
+  .card {
+    margin: 1rem;
+    flex-basis: 15rem;
+    @include mq(phablet, max) {
+      flex: 1 0 100%;
+    }
+  }
+
+}
+
+//Forth Section Newsletter - home page
+section.newsletter {
+  background: $secondary-color;
+  text-align: center;
+  padding: 1.5rem 0 0 0;
+  margin: 0;
+  border: $main-border;
+  border-radius: 10px;
+  box-shadow: $box-shadow;
+  .newsletter-form {
+    margin: 0 auto;
+    input:first-of-type {
+      width: 70%;
+      padding: 1rem;
+    }
+    .main-button {
+      padding: 1rem 2rem;
+      margin-left: 0.5rem;
+    }
+  }
+  @include mq(tablet, max) {
+    .newsletter-form {
+      padding: 0;
+      width: 85%;
+      input:first-of-type {
+        width: 100%;
+        margin: 0.5rem 0;
+      }
+      .main-button {
+        display: block;
+        width: 100%;
+        margin: 0.5rem 0 1rem 0;
+      }
+    }
+  }
+}
+
+//Page About - grid
+section.about .grid{
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-gap: 1em;
+  padding: 3rem 5rem;
+  @include mq(tablet, max) {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 0;
+  }
+  img {
+    width: 14rem;
+    height: 13rem;
+    border: $main-border;
+    border-radius: 8px;
+  }
+
+  .section1 {
+    grid-column: 1/3;
+    grid-row: 1/2;
+  }
+
+  .section4 {
+    grid-column: 2/4;
+  }
+
+  .section5 {
+    grid-column: 1/4;
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+//
+
+//Page Machines & Page Coffee beans
+section.coffee-machines .machines, section.coffee-beans .beans{
+  article.card {
+    border: $main-border;
+    margin: 1.5rem;
+    border-radius: 8px;
+    &:hover {
+      transform: scale(1.05);
+      @include easeOut;
+
+    }
+  }
+
+  .wrapper-img {
+    img{
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  .desc {
+    padding:2rem 0 0 0;
+  }
+}
+
+//Page Blog
+section.pagination {
+  margin: 0;
+}
+
+section.blog-articles {
+  margin: 0;
+
+  img {
+    width: 100%;
+  }
+  article.card {
+    margin: 1rem;
+    flex-basis: 20rem;
+    border-radius: 6px;
+    @include mq(phone, max) {
+      margin: 1rem 0;
+    }
+    h3, label.main-button {
+      padding-top: 0.5rem;
+      text-align: center;
+    }
+    .blog-img {
+      border-radius: 8px;
+    }
+  }
+}
+
+
+
+//Page Contacts
+section.site-contacts {
+  .address {
+    text-align: center;
+    width: 80%;
+    margin: auto;
+  }
+
+  .contact-form {
+    input, textarea {
+      padding: 1.2rem;
+      display: block;
+      width: 100%;
+      margin-top: 1em;
+    }
+
+    legend {
+      font-size: 2rem;
+    }
+
+    textarea {
+      height: 13.65rem;
+    }
+
+    input.main-button {
+      font-size: 1.6rem;
+      padding: 0.8rem;
+    }
+
+    .half {
+      float: left;
+      width: 48%;
+      margin-bottom: 1em;
+    }
+
+    .right {
+      width: 50%;
+    }
+
+    .left {
+      margin-right: 2%;
+    }
+
+    @include mq(tablet, max) {
+      input, textarea {
+        margin: 0.5rem auto;
+      }
+      .half {
+        width: 100%;
+        float: none;
+        margin-bottom: 0;
+      }
+
+      input.main-button {
+        font-size: 1.2rem;
+        padding: 0.6rem;
+      }
+    }
+
+    @include mq(phone-wide, max) {
+      width: 100%;
+      padding: 0;
+
+    }
+  }
+}
+
+
+
+
+
+
+
+

@@ -1,0 +1,92 @@
+.site-footer {
+  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.9)), url("../images/footer.jpg");;
+  background-size: cover;
+  color: white;
+
+  .flex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 5rem 4rem 2rem 4rem;
+    width: 80%;
+    margin: auto 4rem auto 2rem;
+    @include mq(tablet, max) {
+      flex-direction: column;
+      padding: 3rem 0;
+    }
+
+    ul {
+      padding: 0;
+      margin: 0;
+    }
+
+    li {
+      list-style-type: none;
+    }
+    .about-footer {
+      flex-basis: 40%;
+
+      .footer-title {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-bottom: 1rem;
+
+        h5 {
+          padding-bottom: 0;
+        }
+
+        .icons i {
+          padding: 0 0.2rem;
+          &:hover {
+            color: $primary-color;
+            cursor: pointer;
+            @include easeOut();
+          }
+        }
+      }
+
+      & a {
+        text-decoration: none;
+        color: white;
+        text-space: 2px;
+        font-family: 'Courgette', cursive;
+
+        span {
+          color: $primary-color;
+          text-shadow: $text-shadow;
+        }
+      }
+
+    }
+
+    .sitemap-footer {
+      padding-bottom: 2rem;
+      margin: 0 2rem;
+      @include mq(tablet, max) {
+        margin: 0;
+      }
+      & a {
+        text-decoration: none;
+        color: white;
+
+        &:hover {
+          color: $primary-color;
+          @include easeOut();
+        }
+      }
+
+    }
+
+  }
+
+  .final {
+    margin: auto;
+    padding: 2rem;
+    text-align: center;
+    width: 80%;
+    border-top: 2px solid;
+  }
+}
+
+
