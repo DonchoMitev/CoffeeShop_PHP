@@ -54,7 +54,7 @@ class User implements UserInterface
     /**
      * @var ArrayCollection
      *
-     * @ORM\ManyToMany(targetEntity="CoffeeShopBundle\Entity\Role")
+     * @ORM\ManyToMany(targetEntity="CoffeeShopBundle\Entity\Role", inversedBy="users")
      *
      * @ORM\JoinTable(name="users_roles",
      *     joinColumns={@ORM\JoinColumn(name="user_id", referencedColumnName="id")},

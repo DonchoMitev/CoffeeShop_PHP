@@ -1,5 +1,129 @@
 {% extends 'base.html.twig' %}
 
 {% block main %}
-    <h1>Hello</h1>
+    <section class="coffee-main">
+        <header class="section-title">
+            <h2>Coffee as a culture</h2>
+            <div class="flex-coffee-under">
+                <div class="hr-line"></div>
+                <div class="icon"><i class="fas fa-coffee"></i></div>
+                <div class="hr-line"></div>
+            </div>
+        </header>
+
+        <p>
+            Just coffee, good coffee or great coffee? If you choose the latter, you probably already know that over
+            the past few years the way the world talked and thought about coffee has changed a lot. The
+            driving force behind this change were not the big coffee chains, as would have guessed many,
+            but independent small merchants for whom coffee is not just a drink but a culture in a cup that requires care
+            and special attention at every stage until it falls into the hands of the client. That's exactly the
+            philosophy of Coffee Shop.
+        </p>
+        <form action="/about/">
+            <input class="main-button" type="submit" value="More for us">
+        </form>
+
+
+    </section>
+
+    <section class="top-products">
+        <header class="section-title">
+            <h2 class="my">Top Products</h2>
+            <div class="flex-coffee-under">
+                <div class="hr-line"></div>
+                <div class="icon"><i class="fas fa-coffee"></i></div>
+                <div class="hr-line"></div>
+            </div>
+        </header>
+
+        <div class="products flex">
+            <article class="product">
+                <div class="wrapper-img">
+                    <img src="/images/coffee-machine1.png" alt="coffee-beans">
+                    <div class="details">
+                        <h3>Coffee beans</h3>
+                        <p>Our quality coffee beans are natural and good for you. </p>
+                    </div>
+                </div>
+            </article>
+
+            <article class="product">
+                <div class="wrapper-img">
+                    <img src="/images/coffe-mlqno.jpg" alt="image">
+                    <div class="details">
+                        <h3>Ground coffee</h3>
+                        <p>Ground Coffee - Super Crema for your daily coffee ritual.</p>
+                    </div>
+                </div>
+
+            </article>
+
+            <article class="product">
+                <div class="wrapper-img">
+                    <img src="/images/coffee-machine-top.jpg" alt="image">
+                    <div class="details">
+                        <h3>De'longhi Scultura</h3>
+                        <p>Double floor cream filter 2 in 1: the crema filter is suitable for ground coffee.</p>
+                    </div>
+                </div>
+
+            </article>
+
+            <article class="product">
+                <div class="wrapper-img">
+                    <img src="/images/coffee-machine-top2.jpg" alt="image">
+                    <div class="details">
+                        <h3>Cuisinart</h3>
+                        <p>Cuisinart Combination K-cup/Carafe Coffee Maker. 10.75"Wx12.5"Dx16.5"H</p>
+                    </div>
+                </div>
+            </article>
+
+        </div>
+    </section>
+    <section class="our-services">
+        <header class="section-title">
+            <h2>What We Offer</h2>
+            <div class="flex-coffee-under">
+                <div class="hr-line"></div>
+                <div class="icon"><i class="fas fa-coffee"></i></div>
+                <div class="hr-line"></div>
+            </div>
+        </header>
+
+        <div class="services flex">
+            <div class="card">
+                <img class="image-service" src="/images/coffee-beans.png" alt="image" width="100"
+                     height="100">
+                <div class="middle">
+                    <p class="desc">Coffee beans</p>
+                </div>
+            </div>
+            <div class="card">
+                <img class="image-service" src="/images/coffee-machine.png" alt="image" width="100"
+                     height="100">
+                <div class="middle">
+                    <p class="desc">Coffee machines and service</p>
+                </div>
+            </div>
+            <div class="card">
+                <img class="image-service" src="/images/coffee-shop.png" alt="image" width="100"
+                     height="100">
+                <div class="middle">
+                    <p class="desc">Very good place to seat and drink Coffee</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <section class="newsletter">
+        <header>
+            <h3>Sign-up to our newsletter</h3>
+        </header>
+        <form class="newsletter-form">
+            <input type="text" placeholder="Enter Your email address here...">
+            <input class="main-button" type="submit" value="Send">
+        </form>
+    </section>
+
 {% endblock %}

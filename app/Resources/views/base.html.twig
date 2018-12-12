@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="{{ asset('css/main.css') }}">
 </head>
 
-<body id="{% block body_id %}{% endblock %}">
+<body class="{% block body_class %}home{% endblock %}">
 
 {% block header %}
 <header class="site-header">
@@ -79,23 +79,23 @@
             </ul>
         </nav>
     </div>
-    <div class="admin-navigation-bar" id="navigation-bar">
-        {% if app.getUser() and app.getUser().isAdmin() %}
-        <div class="admin-title">
-            <p>Admin Panel</p>
+    {% if app.getUser() and app.getUser().isAdmin() %}
+        <div class="site-admin-navigation-bar" id="navigation-bar">
+            <div class="site-admin-title">
+                <p>Admin Panel</p>
+            </div>
+            <label for="main-nav-toggle" id="toggle"></label>
+            <nav class="main" id="main-navigation">
+                <ul>
+                    <li><a href="{{ path('all_users') }}">All Users</a></li>
+                    <li><a href="/about/">All Products</a></li>
+                    <li><a href="/blog/index.html">All Categories</a></li>
+                    <li><a href="/contacts/">Create Product</a></li>
+                    <li><a href="/contacts/">Create Category</a></li>
+                </ul>
+            </nav>
         </div>
-        <label for="main-nav-toggle" id="toggle"></label>
-        <nav class="main" id="main-navigation">
-            <ul>
-                <li><a href="/">All Users</a></li>
-                <li><a href="/about/">All Products</a></li>
-                <li><a href="/blog/index.html">All Categories</a></li>
-                <li><a href="/contacts/">Create Product</a></li>
-                <li><a href="/contacts/">Create Category</a></li>
-            </ul>
-        </nav>
-        {% endif %}
-    </div>
+    {% endif %}
     <div class="site-header-slogan">
         <h1>
             All you need to feel better is coffee
@@ -105,60 +105,16 @@
             <input class="main-button" type="submit" value="Best Offers">
         </form>
     </div>
-    {#<div class="navbar navbar-default navbar-static-top" role="navigation">#}
-    {#<div class="container">#}
-    {#<div class="navbar-header">#}
-    {#<a href="{{ path('blog_index') }}" class="navbar-brand">SOFTUNI BLOG</a>#}
-    {#{% if app.user %}#}
-    {#<a href="{{ path('article_create') }}" class="navbar-brand">#}
-    {#Create Article#}
-    {#</a>#}
-    {#{% endif %}#}
-    {#<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">#}
-    {#<span class="icon-bar"></span>#}
-    {#<span class="icon-bar"></span>#}
-    {#<span class="icon-bar"></span>#}
-    {#</button>#}
-    {#</div>#}
-    {#<div class="navbar-collapse collapse">#}
-    {#<ul class="nav navbar-nav navbar-right">#}
-    {#{% if app.user %}#}
-    {#<li>#}
-    {#<a href="{{ path('user_profile') }}">#}
-    {#My Profile#}
-    {#</a>#}
-    {#</li>#}
-    {#<li>#}
-    {#<a href="{{ path('security_logout') }}">#}
-    {#Logout#}
-    {#</a>#}
-    {#</li>#}
-    {#{% else %}#}
-    {#<li>#}
-    {#<a href="{{ path('user_register') }}">#}
-    {#REGISTER#}
-    {#</a>#}
-    {#</li>#}
-    {#<li>#}
-    {#<a href="{{ path('security_login') }}">#}
-    {#LOGIN#}
-    {#</a>#}
-    {#</li>#}
-    {#{% endif %}#}
-    {#</ul>#}
-    {#</div>#}
-    {#</div>#}
-    {#</div>#}
-    {#</header>#}
+</header>
     {% endblock %}
-
+<main class="site-content">
     {% block main %}
 
     {% endblock %}
+</main>
 
-
+<footer class="site-footer">
     {% block footer %}
-        <footer class="site-footer">
             <div class="footer flex">
                 <section class="about-footer">
                     <div class="footer-title">
@@ -203,9 +159,8 @@
             <div class="final">
                 <p>© 2018 Coffee Shop . All rights reserved | Design by Doncho Mitev.</p>
             </div>
-
-        </footer>
     {% endblock %}
+    <footer class="site-footer">
 
 </body>
 </html>
