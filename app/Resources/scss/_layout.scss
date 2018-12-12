@@ -281,66 +281,76 @@ section.site-contacts {
     margin: auto;
   }
 
-  .contact-form {
+}
+.main-form {
+  input, textarea {
+    padding: 0.7rem;
+    display: block;
+    width: 100%;
+    margin-top: 1em;
+  }
+
+  label {
+    display: none;
+  }
+  textarea {
+    height: 5.65rem;
+  }
+}
+.contact-form {
+  input, textarea {
+    padding: 1.2rem;
+    display: block;
+    width: 100%;
+    margin-top: 1em;
+  }
+
+
+  textarea {
+    height: 13.65rem;
+  }
+
+  input.main-button {
+    font-size: 1.6rem;
+    padding: 0.8rem;
+  }
+
+  .half {
+    float: left;
+    width: 48%;
+    margin-bottom: 1em;
+  }
+
+  .right {
+    width: 50%;
+  }
+
+  .left {
+    margin-right: 2%;
+  }
+
+  @include mq(tablet, max) {
     input, textarea {
-      padding: 1.2rem;
-      display: block;
+      margin: 0.5rem auto;
+    }
+    .half {
       width: 100%;
-      margin-top: 1em;
-    }
-
-    legend {
-      font-size: 2rem;
-    }
-
-    textarea {
-      height: 13.65rem;
+      float: none;
+      margin-bottom: 0;
     }
 
     input.main-button {
-      font-size: 1.6rem;
-      padding: 0.8rem;
-    }
-
-    .half {
-      float: left;
-      width: 48%;
-      margin-bottom: 1em;
-    }
-
-    .right {
-      width: 50%;
-    }
-
-    .left {
-      margin-right: 2%;
-    }
-
-    @include mq(tablet, max) {
-      input, textarea {
-        margin: 0.5rem auto;
-      }
-      .half {
-        width: 100%;
-        float: none;
-        margin-bottom: 0;
-      }
-
-      input.main-button {
-        font-size: 1.2rem;
-        padding: 0.6rem;
-      }
-    }
-
-    @include mq(phone-wide, max) {
-      width: 100%;
-      padding: 0;
-
+      font-size: 1.2rem;
+      padding: 0.6rem;
     }
   }
+
+  @include mq(phone-wide, max) {
+    width: 100%;
+    padding: 0;
+
+  }
 }
-
-
 
 
 

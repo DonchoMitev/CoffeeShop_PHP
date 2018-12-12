@@ -1,5 +1,5 @@
 {% extends 'base.html.twig' %}
-
+{% block body_class %}register{% endblock %}
 {% block main %}
     <form class="form-horizontal" action="{{ path('user_register') }}" method="post">
         <fieldset>

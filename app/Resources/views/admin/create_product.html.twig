@@ -1,25 +1,21 @@
 {% extends 'base.html.twig' %}
-
+{% block body_class %}create-product{% endblock %}
 {% block main %}
 
-
-            {{ form_start(form) }}
+        <div class="container">
+            {{ form_start(form, { 'attr': {'class': 'main-form'}}) }}
             <fieldset>
-                <legend>New Product</legend>
-            {{ form_row(form.name) }}
-            {{ form_row(form.price) }}
-            {{ form_row(form.description) }}
-            {{ form_row(form.quantity) }}
-            {{ form_row(form.image) }}
-            {{ form_row(form.Save) }}
+                <legend>Add New Product</legend>
+            {{ form_row(form.name, { 'attr': {'placeholder': 'Product Name'}}) }}
+            {{ form_row(form.price, { 'attr': {'placeholder': 'Price in euro'}}) }}
+            {{ form_row(form.description, { 'attr': {'placeholder': 'Description'}}) }}
+            {{ form_row(form.quantity, { 'attr': {'placeholder': 'Quantity'}}) }}
+            {{ form_row(form.image, { 'attr': {'placeholder': 'Image'}}) }}
+            {{ form_row(form.Save, { 'attr': {'class': 'main-button'}}) }}
 
             {{ form_row(form._token) }}
             </fieldset>
             {{ form_end(form) }}
-
-{% endblock %}
-
-{% block body_class %}
-
+        </div>
 {% endblock %}
 

@@ -1,5 +1,5 @@
 {% extends 'base.html.twig' %}
-
+{% block body_class %}login{% endblock %}
 {% block main %}
     <form name="authenticate" action="{{ path('security_login') }}" method="post">
         {% if error %}

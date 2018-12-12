@@ -29,6 +29,11 @@
         </div>
     </div>
     <div class="site-info-bar">
+        {% if app.user %}
+        <div class="welcome">
+            <p>Welcome, {{ app.user.fullName }}</p>
+        </div>
+        {% endif %}
         <ul class="user-navigation">
             {% if app.user %}
                 <li>
