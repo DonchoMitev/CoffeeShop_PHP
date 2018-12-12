@@ -46,7 +46,6 @@ class AdminController extends Controller
         $form = $this->createForm(ProductType::class, $product);
         $form->handleRequest($request);
 
-        var_dump($product);
 
         if ($form->isSubmitted() && $form->isValid()) {
 

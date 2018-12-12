@@ -37,47 +37,21 @@
         </header>
 
         <div class="products flex">
+            {% for product in products %}
             <article class="product">
                 <div class="wrapper-img">
-                    <img src="/images/coffee-machine1.png" alt="coffee-beans">
+                    <img src="{{ product.image }}" alt="coffee-beans">
                     <div class="details">
-                        <h3>Coffee beans</h3>
-                        <p>Our quality coffee beans are natural and good for you. </p>
+                        <h3>{{ product.name }}</h3>
+                        <p>{{ product.description }} </p>
+                        <p>{{ product.price }} </p>
+                        <form action="">
+                            <input class="main-button" type="submit" value="Buy">
+                        </form>
                     </div>
                 </div>
             </article>
-
-            <article class="product">
-                <div class="wrapper-img">
-                    <img src="/images/coffe-mlqno.jpg" alt="image">
-                    <div class="details">
-                        <h3>Ground coffee</h3>
-                        <p>Ground Coffee - Super Crema for your daily coffee ritual.</p>
-                    </div>
-                </div>
-
-            </article>
-
-            <article class="product">
-                <div class="wrapper-img">
-                    <img src="/images/coffee-machine-top.jpg" alt="image">
-                    <div class="details">
-                        <h3>De'longhi Scultura</h3>
-                        <p>Double floor cream filter 2 in 1: the crema filter is suitable for ground coffee.</p>
-                    </div>
-                </div>
-
-            </article>
-
-            <article class="product">
-                <div class="wrapper-img">
-                    <img src="/images/coffee-machine-top2.jpg" alt="image">
-                    <div class="details">
-                        <h3>Cuisinart</h3>
-                        <p>Cuisinart Combination K-cup/Carafe Coffee Maker. 10.75"Wx12.5"Dx16.5"H</p>
-                    </div>
-                </div>
-            </article>
+            {% endfor %}
 
         </div>
     </section>

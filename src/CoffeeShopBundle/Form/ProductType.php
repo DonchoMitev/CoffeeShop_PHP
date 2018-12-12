@@ -5,6 +5,7 @@ namespace CoffeeShopBundle\Form;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\Extension\Core\Type\MoneyType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -25,7 +26,8 @@ class ProductType extends AbstractType
                 ])
             ->add('description', TextareaType::class)
             ->add('quantity', IntegerType::class)
-            ->add('image');
+            ->add('image')
+            ->add('Save', SubmitType::class);
     }/**
      * {@inheritdoc}
      */
