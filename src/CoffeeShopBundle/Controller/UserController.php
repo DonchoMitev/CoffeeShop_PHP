@@ -2,6 +2,7 @@
 
 namespace CoffeeShopBundle\Controller;
 
+use CoffeeShopBundle\Entity\Role;
 use CoffeeShopBundle\Entity\User;
 use CoffeeShopBundle\Form\UserType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
@@ -23,6 +24,12 @@ class UserController extends Controller
         if ($form->isSubmitted()){
             $password = $this->get('security.password_encoder')
                 ->encodePassword($user, $user->getPassword());
+
+            $role = $this
+                ->getDoctrine()
+                ->getRepository(Role::class)
+                ->findOneBy(['name' => 'ROLE_USER']);
+            $user->addRole($role);
             $user->setPassword($password);
             $em = $this->getDoctrine()->getManager();
             $em->persist($user);
@@ -33,5 +40,18 @@ class UserController extends Controller
 
         return $this->render("user/register.html.twig");
 
+    }
+
+    /**
+     * @Route("/profile", name="user_profile")
+     */
+    public function profile(){
+        $userId = $this->getUser()->getId();
+        $user = $this
+            ->getDoctrine()
+            ->getRepository(User::class)
+            ->find($userId);
+        return $this->render("user/profile.html.twig",
+            ['user' => $user]);
     }
 }

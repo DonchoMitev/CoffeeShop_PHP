@@ -2,6 +2,7 @@
 
 namespace CoffeeShopBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\UserInterface;
 
@@ -50,6 +51,23 @@ class User implements UserInterface
      */
     private $fullName;
 
+    /**
+     * @var ArrayCollection
+     *
+     * @ORM\ManyToMany(targetEntity="CoffeeShopBundle\Entity\Role")
+     *
+     * @ORM\JoinTable(name="users_roles",
+     *     joinColumns={@ORM\JoinColumn(name="user_id", referencedColumnName="id")},
+     *     inverseJoinColumns={@ORM\JoinColumn(name="role_id", referencedColumnName="id")}
+     *     )
+     */
+    private $roles;
+
+
+    public function __construct()
+    {
+//        $this->roles = new ArrayCollection();
+    }
 
     /**
      * Get id
@@ -126,7 +144,6 @@ class User implements UserInterface
     }
 
 
-
     /**
      * Set fullName
      *
@@ -167,8 +184,28 @@ class User implements UserInterface
      */
     public function getRoles()
     {
-        // TODO: Implement getRoles() method.
+        $stringRoles = [];
+
+        foreach ($this->roles as $role) {
+
+            /** @var $role Role */
+            $stringRoles[] = $role->getRole();
+        }
+
+        return $stringRoles;
     }
+
+    /**
+     * @param Role $role
+     *
+     * @return User
+     */
+    public function addRole(Role $role)
+    {
+        $this->roles[] = $role;
+        return $this;
+    }
+
 
     /**
      * Returns the salt that was originally used to encode the password.
@@ -191,6 +228,14 @@ class User implements UserInterface
     public function eraseCredentials()
     {
         // TODO: Implement eraseCredentials() method.
+    }
+
+    /**
+     * @return bool
+     */
+    public function isAdmin()
+    {
+        return in_array("ROLE_ADMIN", $this->getRoles());
     }
 }
 

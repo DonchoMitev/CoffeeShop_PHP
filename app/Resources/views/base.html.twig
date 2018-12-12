@@ -16,158 +16,196 @@
 <body id="{% block body_id %}{% endblock %}">
 
 {% block header %}
-    <header class="site-header">
-        <div class="site-info-bar">
-            <div class="icons">
-                <i class="fab fa-facebook-f"></i>
-                <i class="fab fa-twitter"></i>
-                <i class="fab fa-google-plus-g"></i>
-            </div>
-            <div class="contacts">
-                <p><i class="fas fa-phone"></i> +359 88 44 44 44</p>
-                <p><i class="fas fa-envelope"></i> contact@coffeeshop.com</p>
-            </div>
+<header class="site-header">
+    <div class="site-info-bar">
+        <div class="icons">
+            <i class="fab fa-facebook-f"></i>
+            <i class="fab fa-twitter"></i>
+            <i class="fab fa-google-plus-g"></i>
         </div>
-        <div class="site-info-bar">
-            <div class="contacts">
-                <a href="{{ path('security_login') }}"><i class="fas fa-phone"></i>Login</a>
-                <a href="{{ path('user_register') }}"><i class="fas fa-envelope"></i>Register</a>
-            </div>
+        <div class="contacts">
+            <p><i class="fas fa-phone"></i> +359 88 44 44 44</p>
+            <p><i class="fas fa-envelope"></i> contact@coffeeshop.com</p>
         </div>
-        <div class="site-navigation-bar" id="navigation-bar">
-            <div class="site-title">
-                <a href="{{ path('homepage') }}"><span>Coffee</span> Shop</a>
-            </div>
-            <label for="main-nav-toggle" id="toggle"></label>
-            <nav class="main" id="main-navigation">
-                <ul>
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/about/">About Us</a></li>
-                    <li>
-                        <a>Products</a>
-                        <ul>
-                            <li><a href="/beans/">Coffee beans</a></li>
-                            <li>
-                                <a href="/machines/">Coffee machines</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <!--<li><a href="/events/">Events</a></li>-->
-                    <li><a href="/blog/index.html">Blog</a></li>
-                    <li><a href="/contacts/">Contacts</a></li>
-                </ul>
-            </nav>
+    </div>
+    <div class="site-info-bar">
+        <ul class="user-navigation">
+            {% if app.user %}
+                <li>
+                    <a href="{{ path('user_profile') }}">
+                        My Profile
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ path('security_logout') }}">
+                        Logout
+                    </a>
+                </li>
+            {% else %}
+                <li>
+                    <a href="{{ path('user_register') }}">
+                        Register
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ path('security_login') }}">
+                        Login
+                    </a>
+                </li>
+            {% endif %}
+        </ul>
+    </div>
+    <div class="site-navigation-bar" id="navigation-bar">
+        <div class="site-title">
+            <a href="{{ path('homepage') }}"><span>Coffee</span> Shop</a>
         </div>
-        <div class="site-header-slogan">
-            <h1>
-                All you need to feel better is coffee
-            </h1>
-            <p>Make yourself useful. Have a coffee break.</p>
-            <form action="/machines/">
-                <input class="main-button" type="submit" value="Best Offers">
-            </form>
+        <label for="main-nav-toggle" id="toggle"></label>
+        <nav class="main" id="main-navigation">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/about/">About Us</a></li>
+                <li>
+                    <a>Products</a>
+                    <ul>
+                        <li><a href="/beans/">Coffee beans</a></li>
+                        <li>
+                            <a href="/machines/">Coffee machines</a>
+                        </li>
+                    </ul>
+                </li>
+                <!--<li><a href="/events/">Events</a></li>-->
+                <li><a href="/blog/index.html">Blog</a></li>
+                <li><a href="/contacts/">Contacts</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="admin-navigation-bar" id="navigation-bar">
+        {% if app.getUser() and app.getUser().isAdmin() %}
+        <div class="admin-title">
+            <p>Admin Panel</p>
         </div>
-        {#<div class="navbar navbar-default navbar-static-top" role="navigation">#}
-            {#<div class="container">#}
-                {#<div class="navbar-header">#}
-                    {#<a href="{{ path('blog_index') }}" class="navbar-brand">SOFTUNI BLOG</a>#}
-                    {#{% if app.user %}#}
-                        {#<a href="{{ path('article_create') }}" class="navbar-brand">#}
-                            {#Create Article#}
-                        {#</a>#}
-                    {#{% endif %}#}
-                    {#<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">#}
-                        {#<span class="icon-bar"></span>#}
-                        {#<span class="icon-bar"></span>#}
-                        {#<span class="icon-bar"></span>#}
-                    {#</button>#}
-                {#</div>#}
-                {#<div class="navbar-collapse collapse">#}
-                    {#<ul class="nav navbar-nav navbar-right">#}
-                        {#{% if app.user %}#}
-                            {#<li>#}
-                                {#<a href="{{ path('user_profile') }}">#}
-                                    {#My Profile#}
-                                {#</a>#}
-                            {#</li>#}
-                            {#<li>#}
-                                {#<a href="{{ path('security_logout') }}">#}
-                                    {#Logout#}
-                                {#</a>#}
-                            {#</li>#}
-                        {#{% else %}#}
-                            {#<li>#}
-                                {#<a href="{{ path('user_register') }}">#}
-                                    {#REGISTER#}
-                                {#</a>#}
-                            {#</li>#}
-                            {#<li>#}
-                                {#<a href="{{ path('security_login') }}">#}
-                                    {#LOGIN#}
-                                {#</a>#}
-                            {#</li>#}
-                        {#{% endif %}#}
-                    {#</ul>#}
-                {#</div>#}
-            {#</div>#}
-        {#</div>#}
+        <label for="main-nav-toggle" id="toggle"></label>
+        <nav class="main" id="main-navigation">
+            <ul>
+                <li><a href="/">All Users</a></li>
+                <li><a href="/about/">All Products</a></li>
+                <li><a href="/blog/index.html">All Categories</a></li>
+                <li><a href="/contacts/">Create Product</a></li>
+                <li><a href="/contacts/">Create Category</a></li>
+            </ul>
+        </nav>
+        {% endif %}
+    </div>
+    <div class="site-header-slogan">
+        <h1>
+            All you need to feel better is coffee
+        </h1>
+        <p>Make yourself useful. Have a coffee break.</p>
+        <form action="/machines/">
+            <input class="main-button" type="submit" value="Best Offers">
+        </form>
+    </div>
+    {#<div class="navbar navbar-default navbar-static-top" role="navigation">#}
+    {#<div class="container">#}
+    {#<div class="navbar-header">#}
+    {#<a href="{{ path('blog_index') }}" class="navbar-brand">SOFTUNI BLOG</a>#}
+    {#{% if app.user %}#}
+    {#<a href="{{ path('article_create') }}" class="navbar-brand">#}
+    {#Create Article#}
+    {#</a>#}
+    {#{% endif %}#}
+    {#<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">#}
+    {#<span class="icon-bar"></span>#}
+    {#<span class="icon-bar"></span>#}
+    {#<span class="icon-bar"></span>#}
+    {#</button>#}
+    {#</div>#}
+    {#<div class="navbar-collapse collapse">#}
+    {#<ul class="nav navbar-nav navbar-right">#}
+    {#{% if app.user %}#}
+    {#<li>#}
+    {#<a href="{{ path('user_profile') }}">#}
+    {#My Profile#}
+    {#</a>#}
+    {#</li>#}
+    {#<li>#}
+    {#<a href="{{ path('security_logout') }}">#}
+    {#Logout#}
+    {#</a>#}
+    {#</li>#}
+    {#{% else %}#}
+    {#<li>#}
+    {#<a href="{{ path('user_register') }}">#}
+    {#REGISTER#}
+    {#</a>#}
+    {#</li>#}
+    {#<li>#}
+    {#<a href="{{ path('security_login') }}">#}
+    {#LOGIN#}
+    {#</a>#}
+    {#</li>#}
+    {#{% endif %}#}
+    {#</ul>#}
+    {#</div>#}
+    {#</div>#}
+    {#</div>#}
     {#</header>#}
-{% endblock %}
+    {% endblock %}
 
-        {% block main %}
+    {% block main %}
 
-        {% endblock %}
+    {% endblock %}
 
 
-{% block footer %}
-    <footer class="site-footer">
-        <div class="footer flex">
-            <section class="about-footer">
-                <div class="footer-title">
-                    <h5>
-                        <a href=""><span>Coffee</span> Shop</a>
-                    </h5>
-                    <div class="icons">
-                        <i class="fab fa-facebook-f"></i>
-                        <i class="fab fa-twitter"></i>
-                        <i class="fab fa-google-plus-g"></i>
+    {% block footer %}
+        <footer class="site-footer">
+            <div class="footer flex">
+                <section class="about-footer">
+                    <div class="footer-title">
+                        <h5>
+                            <a href=""><span>Coffee</span> Shop</a>
+                        </h5>
+                        <div class="icons">
+                            <i class="fab fa-facebook-f"></i>
+                            <i class="fab fa-twitter"></i>
+                            <i class="fab fa-google-plus-g"></i>
+                        </div>
                     </div>
-                </div>
-                <p>
-                    At the Coffee Shop we offer only the highest class of Arabica and Robusta coffee beans,
-                    carefully selected according to the seasonal specifics of the harvest and the regions of origin.
-                </p>
-            </section>
-            <section class="sitemap-footer">
+                    <p>
+                        At the Coffee Shop we offer only the highest class of Arabica and Robusta coffee beans,
+                        carefully selected according to the seasonal specifics of the harvest and the regions of origin.
+                    </p>
+                </section>
+                <section class="sitemap-footer">
 
-                <h5>QUICK LINKS</h5>
+                    <h5>QUICK LINKS</h5>
 
-                <ul>
-                    <li><a href="">Home</a></li>
-                    <li><a href="/about/">About</a></li>
-                    <li><a href="/blog/index.html">Blog</a></li>
-                    <li><a href="/contacts/">Contacts</a></li>
-                </ul>
-            </section>
+                    <ul>
+                        <li><a href="">Home</a></li>
+                        <li><a href="/about/">About</a></li>
+                        <li><a href="/blog/index.html">Blog</a></li>
+                        <li><a href="/contacts/">Contacts</a></li>
+                    </ul>
+                </section>
 
-            <section class="contacts-footer">
+                <section class="contacts-footer">
 
-                <h5>CONTACT INFO</h5>
+                    <h5>CONTACT INFO</h5>
 
-                <ul>
-                    <li><i class="fas fa-phone-volume"></i> +359 88 44 44 44</li>
-                    <li><i class="fas fa-envelope"></i> contacts@coffeeshop.com</li>
-                    <li><i class="fas fa-clock"></i> Monday - Friday: 09:00 - 18:00</li>
-                    <li><i class="fas fa-map-marked"></i> Sofia,<br>Opalchenska 244 fl. 1</li>
-                </ul>
-            </section>
-        </div>
-        <div class="final">
-            <p>© 2018 Coffee Shop . All rights reserved | Design by Doncho Mitev.</p>
-        </div>
+                    <ul>
+                        <li><i class="fas fa-phone-volume"></i> +359 88 44 44 44</li>
+                        <li><i class="fas fa-envelope"></i> contacts@coffeeshop.com</li>
+                        <li><i class="fas fa-clock"></i> Monday - Friday: 09:00 - 18:00</li>
+                        <li><i class="fas fa-map-marked"></i> Sofia,<br>Opalchenska 244 fl. 1</li>
+                    </ul>
+                </section>
+            </div>
+            <div class="final">
+                <p>© 2018 Coffee Shop . All rights reserved | Design by Doncho Mitev.</p>
+            </div>
 
-    </footer>
-{% endblock %}
+        </footer>
+    {% endblock %}
 
 </body>
 </html>
