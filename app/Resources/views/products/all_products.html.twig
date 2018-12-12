@@ -1,0 +1,31 @@
+{% extends "base.html.twig" %}
+{% block body_class %}admin{% endblock %}
+{% block main %}
+
+    <table>
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Description</th>
+            <th>Quantity</th>
+            <th>Image</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for product in products %}
+            <tr>
+                <td>{{ product.name }}</td>
+                <td>{{ product.price }}</td>
+                <td>{{ product.description}}</td>
+                <td>{{ product.quantity }}</td>
+                <td>{{ product.image }}</td>
+                <td>{{ product.addedOn | date }}</td>
+                {#<td><a href="{{ path('one_product', { 'id': product.id }) }}">Edit</a> | <td><a href="{{ path('one_product', { 'id': product.id }) }}">Edit</a> </td>#}
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}
