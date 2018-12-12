@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+{% block body_class %}
+
+{% endblock %}
+{% block main %}
+
+        <div class="container body-content">
+            <div class="row">
+                <div class="col-md-12">
+                    <article>
+                        <header>
+                            <h2>{{ user.username }}</h2>
+                        </header>
+
+                        <p>
+                            {{ user.email }}
+                        </p>
+
+                        <p>
+                            {{ user.fullName }}
+                        </p>
+
+                        <p>
+                            {{ user.roles[0] }}
+                        </p>
+
+                        <footer>
+                            <div class="pull-right">
+                                {#{% if app.getUser() and (app.getUser().isAuthor(user) or app.getUser().isAdmin()) %}#}
+                                    {#<a class="btn btn-danger btn-xs" href="{{ path('user_delete', {'id':user.id}) }}">delete &raquo;</a>#}
+                                    {#<a class="btn btn-success btn-xs" href="{{ path('user_edit', {'id':user.id}) }}">edit &raquo;</a>#}
+                                {#{% endif %}#}
+                                {#<a class="btn btn-default btn-xs" href="{{ path('blog_index') }}">back &raquo;</a>#}
+                            </div>
+                        </footer>
+                    </article>
+                </div>
+            </div>
+        </div>
+
+
+{% endblock %}
+
+
+
