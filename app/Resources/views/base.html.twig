@@ -12,107 +12,126 @@
     <title>{% block title %}Coffee Shop{% endblock %}</title>
     <link rel="stylesheet" href="{{ asset('css/main.css') }}">
 </head>
-
 <body class="{% block body_class %}home{% endblock %}">
-
 {% block header %}
-<header class="site-header">
-    <div class="site-info-bar">
-        <div class="icons">
-            <i class="fab fa-facebook-f"></i>
-            <i class="fab fa-twitter"></i>
-            <i class="fab fa-google-plus-g"></i>
+    <header class="site-header">
+        <div class="site-info-bar">
+            <div class="icons">
+                <i class="fab fa-facebook-f"></i>
+                <i class="fab fa-twitter"></i>
+                <i class="fab fa-google-plus-g"></i>
+            </div>
+            <div class="contacts">
+                <p><i class="fas fa-phone"></i> +359 88 44 44 44</p>
+                <p><i class="fas fa-envelope"></i> contact@coffeeshop.com</p>
+            </div>
         </div>
-        <div class="contacts">
-            <p><i class="fas fa-phone"></i> +359 88 44 44 44</p>
-            <p><i class="fas fa-envelope"></i> contact@coffeeshop.com</p>
-        </div>
-    </div>
-    <div class="site-info-bar">
-        {% if app.user %}
-        <div class="welcome">
-            <p>Welcome, {{ app.user.fullName }}</p>
-        </div>
-        {% endif %}
-        <ul class="user-navigation">
-            {% if app.user %}
-                <li>
-                    <a href="{{ path('user_profile') }}">
-                        My Profile
-                    </a>
-                </li>
-                <li>
-                    <a href="{{ path('security_logout') }}">
-                        Logout
-                    </a>
-                </li>
-            {% else %}
-                <li>
-                    <a href="{{ path('user_register') }}">
-                        Register
-                    </a>
-                </li>
-                <li>
-                    <a href="{{ path('security_login') }}">
-                        Login
-                    </a>
-                </li>
-            {% endif %}
-        </ul>
-    </div>
-    <div class="site-navigation-bar" id="navigation-bar">
-        <div class="site-title">
-            <a href="{{ path('homepage') }}"><span>Coffee</span> Shop</a>
-        </div>
-        <label for="main-nav-toggle" id="toggle"></label>
-        <nav class="main" id="main-navigation">
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/about/">About Us</a></li>
-                <li>
-                    <a>Products</a>
-                    <ul>
-                        <li><a href="/beans/">Coffee beans</a></li>
+        <div class="site-navigation-bar" id="navigation-bar">
+            <div class="site-title">
+                <a href="{{ path('homepage') }}"><span>Coffee</span> Shop</a>
+            </div>
+            <div class="site-info-bar">
+                {% if app.user %}
+                    <div class="welcome">
+                        <p>Welcome, {{ app.user.fullName }}</p>
+                    </div>
+                {% endif %}
+                <ul class="user-navigation">
+                    {% if app.user %}
                         <li>
-                            <a href="/machines/">Coffee machines</a>
+                            <a href="{{ path('user_profile') }}">
+                                My Profile
+                            </a>
                         </li>
-                    </ul>
-                </li>
-                <!--<li><a href="/events/">Events</a></li>-->
-                <li><a href="/blog/index.html">Blog</a></li>
-                <li><a href="/contacts/">Contacts</a></li>
-            </ul>
-        </nav>
-    </div>
-    {% if app.getUser() and app.getUser().isAdmin() %}
-        <div class="site-admin-navigation-bar" id="navigation-bar">
-            <div class="site-admin-title">
-                <p>Admin Panel</p>
+                        <li>
+                            <a href="{{ path('security_logout') }}">
+                                Logout
+                            </a>
+                        </li>
+                    {% else %}
+                        <li>
+                            <a href="{{ path('user_register') }}">
+                                Register
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ path('security_login') }}">
+                                Login
+                            </a>
+                        </li>
+                    {% endif %}
+                </ul>
             </div>
             <label for="main-nav-toggle" id="toggle"></label>
+        </div>
+        <div class="site-navigation-bar" id="navigation-bar">
             <nav class="main" id="main-navigation">
                 <ul>
-                    <li><a href="{{ path('all_users') }}">All Users</a></li>
-                    <li><a href="{{ path('all_products') }}">All Products</a></li>
-                    <li><a href="/blog/index.html">All Categories</a></li>
-                    <li><a href="{{ path('product_create') }}">Create Product</a></li>
-                    <li><a href="/contacts/">Create Category</a></li>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/about/">About Us</a></li>
+                    <li>
+                        <a>Products</a>
+                        <ul>
+                            <li><a href="/beans/">Coffee beans</a></li>
+                            <li>
+                                <a href="/machines/">Coffee machines</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <!--<li><a href="/events/">Events</a></li>-->
+                    <li><a href="/blog/index.html">Blog</a></li>
+                    <li><a href="/contacts/">Contacts</a></li>
                 </ul>
             </nav>
         </div>
-    {% endif %}
-    <div class="site-header-slogan">
-        <h1>
-            All you need to feel better is coffee
-        </h1>
-        <p>Make yourself useful. Have a coffee break.</p>
-        <form action="/machines/">
-            <input class="main-button" type="submit" value="Best Offers">
-        </form>
-    </div>
-</header>
-    {% endblock %}
+        {% if app.getUser() and app.getUser().isAdmin() %}
+            <div class="site-admin-navigation-bar" id="navigation-bar">
+                <div class="site-admin-title">
+                    <p>Admin Panel</p>
+                </div>
+                <label for="main-nav-toggle" id="toggle"></label>
+                <nav class="main" id="main-navigation">
+                    <ul>
+                        <li><a href="{{ path('all_users') }}">All Users</a>
+                            <ul>
+                                <li><a href="{{ path('all_users') }}">All Users</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="{{ path('all_products') }}">Products</a>
+                            <ul>
+                                <li><a href="{{ path('all_products') }}">All Products</a></li>
+                                <li><a href="{{ path('product_create') }}">Create Product</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="/blog/index.html">Categories</a>
+                            <ul>
+                                <li><a href="/blog/index.html">All Categories</a></li>
+                                <li><a href="/contacts/">Create Category</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        {% endif %}
+        <div class="site-header-slogan">
+            <h1>
+                All you need to feel better is coffee
+            </h1>
+            <p>Make yourself useful. Have a coffee break.</p>
+            <form action="/machines/">
+                <input class="main-button" type="submit" value="Best Offers">
+            </form>
+        </div>
+    </header>
+{% endblock %}
 <main class="site-content">
+    {% for label, messages in app.flashes %}
+        {% for message in messages %}
+            <div class="flash-{{ label }}">
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endfor %}
     {% block main %}
 
     {% endblock %}
@@ -120,50 +139,50 @@
 
 <footer class="site-footer">
     {% block footer %}
-            <div class="footer flex">
-                <section class="about-footer">
-                    <div class="footer-title">
-                        <h5>
-                            <a href=""><span>Coffee</span> Shop</a>
-                        </h5>
-                        <div class="icons">
-                            <i class="fab fa-facebook-f"></i>
-                            <i class="fab fa-twitter"></i>
-                            <i class="fab fa-google-plus-g"></i>
-                        </div>
+        <div class="footer flex">
+            <section class="about-footer">
+                <div class="footer-title">
+                    <h5>
+                        <a href=""><span>Coffee</span> Shop</a>
+                    </h5>
+                    <div class="icons">
+                        <i class="fab fa-facebook-f"></i>
+                        <i class="fab fa-twitter"></i>
+                        <i class="fab fa-google-plus-g"></i>
                     </div>
-                    <p>
-                        At the Coffee Shop we offer only the highest class of Arabica and Robusta coffee beans,
-                        carefully selected according to the seasonal specifics of the harvest and the regions of origin.
-                    </p>
-                </section>
-                <section class="sitemap-footer">
+                </div>
+                <p>
+                    At the Coffee Shop we offer only the highest class of Arabica and Robusta coffee beans,
+                    carefully selected according to the seasonal specifics of the harvest and the regions of origin.
+                </p>
+            </section>
+            <section class="sitemap-footer">
 
-                    <h5>QUICK LINKS</h5>
+                <h5>QUICK LINKS</h5>
 
-                    <ul>
-                        <li><a href="">Home</a></li>
-                        <li><a href="/about/">About</a></li>
-                        <li><a href="/blog/index.html">Blog</a></li>
-                        <li><a href="/contacts/">Contacts</a></li>
-                    </ul>
-                </section>
+                <ul>
+                    <li><a href="">Home</a></li>
+                    <li><a href="/about/">About</a></li>
+                    <li><a href="/blog/index.html">Blog</a></li>
+                    <li><a href="/contacts/">Contacts</a></li>
+                </ul>
+            </section>
 
-                <section class="contacts-footer">
+            <section class="contacts-footer">
 
-                    <h5>CONTACT INFO</h5>
+                <h5>CONTACT INFO</h5>
 
-                    <ul>
-                        <li><i class="fas fa-phone-volume"></i> +359 88 44 44 44</li>
-                        <li><i class="fas fa-envelope"></i> contacts@coffeeshop.com</li>
-                        <li><i class="fas fa-clock"></i> Monday - Friday: 09:00 - 18:00</li>
-                        <li><i class="fas fa-map-marked"></i> Sofia,<br>Opalchenska 244 fl. 1</li>
-                    </ul>
-                </section>
-            </div>
-            <div class="final">
-                <p>© 2018 Coffee Shop . All rights reserved | Design by Doncho Mitev.</p>
-            </div>
+                <ul>
+                    <li><i class="fas fa-phone-volume"></i> +359 88 44 44 44</li>
+                    <li><i class="fas fa-envelope"></i> contacts@coffeeshop.com</li>
+                    <li><i class="fas fa-clock"></i> Monday - Friday: 09:00 - 18:00</li>
+                    <li><i class="fas fa-map-marked"></i> Sofia,<br>Opalchenska 244 fl. 1</li>
+                </ul>
+            </section>
+        </div>
+        <div class="final">
+            <p>© 2018 Coffee Shop . All rights reserved | Design by Doncho Mitev.</p>
+        </div>
     {% endblock %}
     <footer class="site-footer">
 

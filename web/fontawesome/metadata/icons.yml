@@ -6561,7 +6561,7 @@ hammer:
   label: Hammer
   search:
     terms:
-      - admin
+      - Admin
       - fix
       - repair
       - settings
@@ -8174,7 +8174,7 @@ lock:
   label: lock
   search:
     terms:
-      - admin
+      - Admin
       - protect
       - security
   styles:
@@ -8188,7 +8188,7 @@ lock-open:
   label: Lock Open
   search:
     terms:
-      - admin
+      - Admin
       - lock
       - open
       - password
@@ -11072,7 +11072,7 @@ screwdriver:
   label: Screwdriver
   search:
     terms:
-      - admin
+      - Admin
       - fix
       - repair
       - settings
@@ -13233,7 +13233,7 @@ toolbox:
   label: Toolbox
   search:
     terms:
-      - admin
+      - Admin
       - container
       - fix
       - repair
@@ -13715,7 +13715,7 @@ unlock:
   label: unlock
   search:
     terms:
-      - admin
+      - Admin
       - lock
       - password
       - protect
@@ -13729,7 +13729,7 @@ unlock-alt:
   label: Alternate Unlock
   search:
     terms:
-      - admin
+      - Admin
       - lock
       - password
       - protect

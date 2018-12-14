@@ -4,6 +4,8 @@ namespace CoffeeShopBundle\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
@@ -11,6 +13,8 @@ use Symfony\Component\Security\Core\User\UserInterface;
  *
  * @ORM\Table(name="users")
  * @ORM\Entity(repositoryClass="CoffeeShopBundle\Repository\UserRepository")
+ * @UniqueEntity(fields="email", message="Email already taken")
+ *
  */
 class User implements UserInterface
 {
@@ -23,26 +27,30 @@ class User implements UserInterface
      */
     private $id;
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="username", type="string", length=255, unique=true)
-     */
-    private $username;
 
     /**
      * @var string
      *
      * @ORM\Column(name="email", type="string", length=255, unique=true)
+     * @Assert\NotBlank
+     * @Assert\Email
      */
     private $email;
 
     /**
+     * @Assert\NotBlank
+     * @Assert\Length(max=4096)
+     */
+    private $plainPassword;
+
+    /**
      * @var string
      *
-     * @ORM\Column(name="password", type="string", length=255)
+     * @ORM\Column(name="password", type="string", length=64)
      */
     private $password;
+
+
 
     /**
      * @var string
@@ -79,29 +87,6 @@ class User implements UserInterface
         return $this->id;
     }
 
-    /**
-     * Set username
-     *
-     * @param string $username
-     *
-     * @return User
-     */
-    public function setUsername($username)
-    {
-        $this->username = $username;
-
-        return $this;
-    }
-
-    /**
-     * Get username
-     *
-     * @return string
-     */
-    public function getUsername()
-    {
-        return $this->username;
-    }
 
     /**
      * Set email
@@ -236,6 +221,32 @@ class User implements UserInterface
     public function isAdmin()
     {
         return in_array("ROLE_ADMIN", $this->getRoles());
+    }
+
+    /**
+     * Returns the username used to authenticate the user.
+     *
+     * @return string The username
+     */
+    public function getUsername()
+    {
+        return $this->email;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPlainPassword()
+    {
+        return $this->plainPassword;
+    }
+
+    /**
+     * @param mixed $plainPassword
+     */
+    public function setPlainPassword($plainPassword)
+    {
+        $this->plainPassword = $plainPassword;
     }
 }
 

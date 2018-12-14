@@ -73,7 +73,7 @@
           justify-content: space-around;
           align-items: center;
           flex-wrap: wrap;
-          padding: 0.5rem 1rem;
+          //padding: 0.5rem 1rem;
 
           #{$cn}-title {
             padding: 0;
@@ -134,6 +134,13 @@ body:not(.home) .site-header-slogan {
   }
 }
 
+body.admin .site-header-slogan{
+  padding: 0;
+
+  h1 {
+    display: none;
+  }
+}
 
 
 

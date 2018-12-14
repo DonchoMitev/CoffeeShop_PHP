@@ -21,9 +21,9 @@ class UserController extends Controller
         $form = $this->createForm(UserType::class, $user);
         $form->handleRequest($request);
 
-        if ($form->isSubmitted()){
+        if ($form->isSubmitted() && $form->isValid()){
             $password = $this->get('security.password_encoder')
-                ->encodePassword($user, $user->getPassword());
+                ->encodePassword($user, $user->getPlainPassword());
 
             $role = $this
                 ->getDoctrine()
@@ -31,14 +31,20 @@ class UserController extends Controller
                 ->findOneBy(['name' => 'ROLE_USER']);
             $user->addRole($role);
             $user->setPassword($password);
+
             $em = $this->getDoctrine()->getManager();
             $em->persist($user);
             $em->flush();
 
+            $this->addFlash(
+                'success',
+                'You succsesfully registred, you can loggin now :)'
+            );
+
             return $this->redirectToRoute("security_login");
         }
 
-        return $this->render("user/register.html.twig");
+        return $this->render("user/register.html.twig", ['form' => $form->createView()]);
 
     }
 
