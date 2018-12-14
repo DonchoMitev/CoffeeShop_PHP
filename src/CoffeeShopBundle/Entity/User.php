@@ -71,10 +71,19 @@ class User implements UserInterface
      */
     private $roles;
 
+    /**
+     * @ORM\OneToMany(targetEntity="CoffeeShopBundle\Entity\OrderProducts", mappedBy="user")
+     * @ORM\OrderBy({"date":"desc"})
+     *
+     * @var OrderProducts[]|ArrayCollection $orders
+     */
+    private $orders;
+
 
     public function __construct()
     {
         $this->roles = new ArrayCollection();
+        $this->orders = new ArrayCollection();
     }
 
     /**
@@ -247,6 +256,22 @@ class User implements UserInterface
     public function setPlainPassword($plainPassword)
     {
         $this->plainPassword = $plainPassword;
+    }
+
+    /**
+     * @return OrderProducts[]|ArrayCollection
+     */
+    public function getOrders()
+    {
+        return $this->orders;
+    }
+
+    /**
+     * @param OrderProducts[]|ArrayCollection $orders
+     */
+    public function setOrders($orders)
+    {
+        $this->orders = $orders;
     }
 }
 

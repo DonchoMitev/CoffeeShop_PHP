@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * OrderProducts
  *
- * @ORM\Table(name="order_products")
+ * @ORM\Table(name="orders")
  * @ORM\Entity(repositoryClass="CoffeeShopBundle\Repository\OrderProductsRepository")
  */
 class OrderProducts
@@ -41,6 +41,14 @@ class OrderProducts
      * @ORM\Column(name="total", type="float")
      */
     private $total;
+
+    /**
+     * @var User $user
+     *
+     * @ORM\ManyToOne(targetEntity="CoffeeShopBundle\Entity\User", inversedBy="orders")
+     *
+     */
+    private $user;
 
 
     /**
