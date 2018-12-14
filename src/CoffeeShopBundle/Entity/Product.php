@@ -63,6 +63,12 @@ class Product
      */
     private $image;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="CoffeeShopBundle\Entity\Category", inversedBy="products")
+     * @Assert\NotBlank()
+     */
+    private $category;
+
     public function __construct()
     {
         $this->addedOn = new \DateTime();
@@ -220,6 +226,22 @@ class Product
     public function getImage()
     {
         return $this->image;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCategory()
+    {
+        return $this->category;
+    }
+
+    /**
+     * @param mixed $category
+     */
+    public function setCategory($category)
+    {
+        $this->category = $category;
     }
 }
 

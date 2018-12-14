@@ -2,12 +2,13 @@
 
 namespace CoffeeShopBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
  * Category
  *
- * @ORM\Table(name="category")
+ * @ORM\Table(name="categories")
  * @ORM\Entity(repositoryClass="CoffeeShopBundle\Repository\CategoryRepository")
  */
 class Category
@@ -28,6 +29,17 @@ class Category
      */
     private $name;
 
+    /**
+     * @ORM\OneToMany(targetEntity="CoffeeShopBundle\Entity\Product", mappedBy="category")
+     *
+     * @var Product[]|ArrayCollection $products
+     */
+    private $products;
+
+    public function __construct()
+    {
+        $this->products = new ArrayCollection();
+    }
 
     /**
      * Get id
