@@ -2,6 +2,8 @@
 
 namespace CoffeeShopBundle\Repository;
 
+use Doctrine\ORM\QueryBuilder;
+
 /**
  * CategoryRepository
  *
@@ -10,4 +12,13 @@ namespace CoffeeShopBundle\Repository;
  */
 class CategoryRepository extends \Doctrine\ORM\EntityRepository
 {
+    /**
+     * @return
+     */
+    public function findProducts()
+    {
+        return $this->createQueryBuilder("categories")
+            ->join("categories.products", "products")
+            ->addSelect("products")->getQuery()->getResult();
+    }
 }

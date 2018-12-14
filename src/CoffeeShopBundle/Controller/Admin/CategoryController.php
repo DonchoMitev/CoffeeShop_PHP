@@ -3,6 +3,7 @@
 namespace CoffeeShopBundle\Controller\Admin;
 
 use CoffeeShopBundle\Entity\Category;
+use CoffeeShopBundle\Form\CategoryType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
@@ -17,13 +18,23 @@ use Symfony\Component\Routing\Annotation\Route;
 class CategoryController extends Controller
 {
     /**
+     * @Route("/all", name="all_categories")
+     */
+    public function allCategoriesAction()
+    {
+        $categories = $this->getDoctrine()->getRepository(Category::class)->findAll();
+
+
+        return $this->render("admin/categories/all.html.twig", ["categories" => $categories]);
+    }
+    /**
      * @Route("/add", name="add_category")
      * @param Request $request
      * @return Response
      */
     public function addCategoryAction(Request $request)
     {
-        $form = $this->createForm(AddEditCategoryForm::class);
+        $form = $this->createForm(CategoryType::class);
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
             /** @var Category $category */

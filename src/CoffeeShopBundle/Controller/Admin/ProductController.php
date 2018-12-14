@@ -17,6 +17,19 @@ use Symfony\Component\Routing\Annotation\Route;
  */
 class ProductController extends Controller
 {
+
+
+    /**
+     * @Route("/all_products", name="all_products")
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
+    public function viewAllProducts()
+    {
+        $products = $this->getDoctrine()->getRepository(Product::class)->findAll();
+
+        return $this->render('/admin/products/all_products.html.twig', ['products' => $products]);
+    }
+
     /**
      * @Route("/create", name="product_create")
      * @Security("is_granted('IS_AUTHENTICATED_FULLY')")
@@ -36,21 +49,69 @@ class ProductController extends Controller
             $em->persist($product);
             $em->flush();
 
-            return $this->redirectToRoute("homepage");
+            $this->addFlash("success", "Product {$product->getName()} added successfully.");
+
+            return $this->redirectToRoute("all_products");
         }
 
 
-        return $this->render('admin/create_product.html.twig', ['form' => $form->createView()]);
+        return $this->render('admin/products/add_product.html.twig', ['form' => $form->createView()]);
     }
 
     /**
-     * @Route("/all_products", name="all_products")
+     * @Route("/edit/{id}", name="edit_product")
+     * @Security("is_granted('IS_AUTHENTICATED_FULLY')")
+     * @param Request $request
+     * @param $id
      * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function viewAllProducts()
+    public function editAction(Request $request, $id)
     {
-        $products = $this->getDoctrine()->getRepository(Product::class)->findAll();
+        $product = $this->getDoctrine()->getRepository(Product::class)->find($id);
+        $form = $this->createForm(ProductType::class, $product);
+        $form->handleRequest($request);
 
-        return $this->render('products/all_products.html.twig', ['products' => $products]);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+
+            $em = $this->getDoctrine()->getManager();
+            $em->merge($product);
+            $em->flush();
+
+            $this->addFlash("success", "Product {$product->getName()} updated successfully.");
+
+            return $this->redirectToRoute("all_products");
+        }
+
+
+        return $this->render('admin/products/edit_product.html.twig', ['form' => $form->createView(), 'article' => $product]);
+    }
+
+    /**
+     * @Route("/delete/{id}", name="delete_product")
+     * @Security("is_granted('IS_AUTHENTICATED_FULLY')")
+     * @param Request $request
+     * @param $id
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
+    public function deleteAction(Request $request, $id)
+    {
+        $product = $this->getDoctrine()->getRepository(Product::class)->find($id);
+        $form = $this->createForm(ProductType::class, $product);
+        $form->handleRequest($request);
+
+
+        if ($form->isSubmitted() && $form->isValid()) {
+
+            $em = $this->getDoctrine()->getManager();
+            $em->remove($product);
+            $em->flush();
+
+            $this->addFlash("success", "Product {$product->getName()} deleted successfully.");
+            return $this->redirectToRoute("all_products");
+        }
+
+
+        return $this->render('admin/products/delete.html.twig', ['form' => $form->createView(), 'article' => $product]);
     }
 }

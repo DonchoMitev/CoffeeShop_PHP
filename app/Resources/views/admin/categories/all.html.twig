@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block main %}
+    <div>
+        <a href="{{ path("add_category") }}" class="main-button">Add new category</a>
+    </div>
+    <hr>
+    <table class="table table-responsive table-striped">
+        <thead>
+        <tr>
+            <th>#</th>
+            <th>Category Name</th>
+            <th>Products count</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for category in categories %}
+            <tr>
+                <td>{{ category.id }}</td>
+                <td>
+                    {{ category.name }}
+                </td>
+                <td>{{ category|length }}</td>
+                <td>
+                    {#<a href="{{ path("admin_edit_category", {"slug": category.slug}) }}"#}
+                       {#class="btn btn-warning">Edit</a>#}
+                </td>
+                <td>
+                    {#{% if category.products|length == 0 %}#}
+                        {#<form action="{{ path("admin_delete_category", {"id": category.id}) }}" method="post">#}
+                            {#<button class="btn btn-danger delete-item" type="submit">Delete</button>#}
+                        {#</form>#}
+                    {#{% else %}#}
+                        {#<button class="btn btn-default disabled" type="submit">Delete</button>#}
+                    {#{% endif %}#}
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
+
+{% block body_class %}
+    admin
+{% endblock %}
+

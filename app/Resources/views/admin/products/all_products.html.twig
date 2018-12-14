@@ -1,7 +1,10 @@
 {% extends "base.html.twig" %}
-{% block body_class %}admin{% endblock %}
-{% block main %}
 
+{% block main %}
+    <div>
+        <a href="{{ path("product_create") }}" class="main-button">Add new product</a>
+    </div>
+    <hr>
     <table>
         <thead>
         <tr>
@@ -23,10 +26,11 @@
                 <td>{{ product.quantity }}</td>
                 <td>{{ product.image }}</td>
                 <td>{{ product.addedOn | date }}</td>
-                {#<td><a href="{{ path('one_product', { 'id': product.id }) }}">Edit</a> | <td><a href="{{ path('one_product', { 'id': product.id }) }}">Edit</a> </td>#}
+                <td><a href="{{ path('edit_product', { 'id': product.id }) }}" class="main-button">Edit</a> | <a href="{{ path('delete_product', { 'id': product.id }) }}">Delete</a> </td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
 {% endblock %}
+{% block body_class %}admin{% endblock %}

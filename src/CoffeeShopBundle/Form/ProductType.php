@@ -2,6 +2,8 @@
 
 namespace CoffeeShopBundle\Form;
 
+use CoffeeShopBundle\Entity\Category;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\Extension\Core\Type\MoneyType;
@@ -20,11 +22,16 @@ class ProductType extends AbstractType
     {
         $builder
             ->add('name', TextType::class)
+            ->add('category', EntityType::class,[
+                'class'=>Category::class,
+                'choice_label'=>'name',
+                'placeholder'=>'Choose a category'
+            ])
+            ->add('description', TextareaType::class)
             ->add('price', MoneyType::class,
                 [
                     "currency" => "EUR"
                 ])
-            ->add('description', TextareaType::class)
             ->add('quantity', IntegerType::class)
             ->add('image')
             ->add('Save', SubmitType::class);
@@ -38,13 +45,13 @@ class ProductType extends AbstractType
         ));
     }
 
-    /**
-     * {@inheritdoc}
-     */
-    public function getBlockPrefix()
-    {
-        return 'coffeeshopbundle_product';
-    }
+//    /**
+//     * {@inheritdoc}
+//     */
+//    public function getBlockPrefix()
+//    {
+//        return 'coffeeshopbundle_product';
+//    }
 
 
 }
