@@ -1,21 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="577252ab-391e-4905-8875-400c011d0e68" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Resources/views/admin/categories/all.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Resources/views/admin/products/delete.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Resources/views/admin/products/edit_product.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/views/admin/all_products.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/admin/products/all_products.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/views/admin/categories/add.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/admin/categories/add.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/views/admin/create_product.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/admin/products/add_product.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/views/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/base.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CoffeeShopBundle/Controller/Admin/CategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/CoffeeShopBundle/Controller/Admin/CategoryController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CoffeeShopBundle/Controller/Admin/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/CoffeeShopBundle/Controller/Admin/ProductController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CoffeeShopBundle/Entity/Category.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/CoffeeShopBundle/Entity/Category.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CoffeeShopBundle/Form/ProductType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/CoffeeShopBundle/Form/ProductType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CoffeeShopBundle/Repository/CategoryRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/CoffeeShopBundle/Repository/CategoryRepository.php" afterDir="false" />
-    </list>
+    <list default="true" id="577252ab-391e-4905-8875-400c011d0e68" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -526,12 +512,12 @@
       <workItem from="1544599078146" duration="26496000" />
       <workItem from="1544689722935" duration="6857000" />
       <workItem from="1544776949887" duration="3286000" />
-      <workItem from="1544781378269" duration="14048000" />
+      <workItem from="1544781378269" duration="15067000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="74460000" />
+    <option name="totallyTimeSpent" value="75479000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -544,7 +530,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32952693" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
