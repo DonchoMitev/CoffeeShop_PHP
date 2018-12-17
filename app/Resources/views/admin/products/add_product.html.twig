@@ -2,11 +2,12 @@
 {% block body_class %}admin{% endblock %}
 {% block main %}
 
-        <div class="container">
-            {{ form_start(form, { 'attr': {'class': 'main-form'}}) }}
-            <fieldset>
-                <legend>Add New Product</legend>
+    <div class="container">
+        {{ form_start(form, { 'attr': {'class': 'main-form'}}) }}
+        <fieldset>
+            <legend>Add New Product</legend>
             {{ form_row(form.name, { 'attr': {'placeholder': 'Product Name'}}) }}
+            {{ form_row(form.category, { 'attr': {'placeholder': 'Category'}}) }}
             {{ form_row(form.price, { 'attr': {'placeholder': 'Price in euro'}}) }}
             {{ form_row(form.description, { 'attr': {'placeholder': 'Description'}}) }}
             {{ form_row(form.quantity, { 'attr': {'placeholder': 'Quantity'}}) }}
@@ -14,8 +15,8 @@
             {{ form_row(form.Save, { 'attr': {'class': 'main-button'}}) }}
 
             {{ form_row(form._token) }}
-            </fieldset>
-            {{ form_end(form) }}
-        </div>
+        </fieldset>
+        {{ form_end(form) }}
+    </div>
 {% endblock %}
 

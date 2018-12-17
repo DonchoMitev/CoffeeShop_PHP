@@ -25,7 +25,7 @@ class CategoryController extends Controller
         $categories = $this->getDoctrine()->getRepository(Category::class)->findAll();
 
 
-        return $this->render("admin/categories/all.html.twig", ["categories" => $categories]);
+        return $this->render("all_categories.html.twig", ["categories" => $categories]);
     }
     /**
      * @Route("/add", name="add_category")
@@ -46,7 +46,7 @@ class CategoryController extends Controller
             $this->addFlash("success", "Category {$category->getName()} was added!");
             return $this->redirectToRoute("homepage");
         }
-        return $this->render("admin/categories/add.html.twig", [
+        return $this->render("add_category.html.twig", [
             "form" => $form->createView()
         ]);
     }
