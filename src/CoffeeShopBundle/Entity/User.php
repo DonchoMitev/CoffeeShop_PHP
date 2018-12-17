@@ -60,7 +60,7 @@ class User implements UserInterface
     private $fullName;
 
     /**
-     * @var ArrayCollection
+     * @var Role[]|ArrayCollection
      *
      * @ORM\ManyToMany(targetEntity="CoffeeShopBundle\Entity\Role", inversedBy="users")
      *
@@ -273,5 +273,6 @@ class User implements UserInterface
     {
         $this->orders = $orders;
     }
+
 }
 

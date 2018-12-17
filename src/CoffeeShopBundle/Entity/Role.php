@@ -82,5 +82,9 @@ class Role
     public function getRole() {
         return $this->getName();
     }
+
+    public function __toString() {
+        return ucfirst(strtolower(explode("_", $this->name)[1]));
+    }
 }
 

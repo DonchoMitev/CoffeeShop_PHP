@@ -10,4 +10,8 @@ namespace CoffeeShopBundle\Repository;
  */
 class UserRepository extends \Doctrine\ORM\EntityRepository
 {
+    public function findByQueryBuilder()
+    {
+        return $this->createQueryBuilder("user");
+    }
 }

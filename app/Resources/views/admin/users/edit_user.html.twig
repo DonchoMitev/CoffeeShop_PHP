@@ -3,21 +3,22 @@
 {% block main_title %}Edit user{% endblock %}
 
 {% block main %}
-    {{ form_start(edit_form) }}
+    {{ form_start(form, { 'attr': {'class': 'main-form'}}) }}
 
-    {{ form_row(edit_form.email) }}
-    {{ form_row(edit_form.fullName) }}
-    {{ form_row(edit_form.roles) }}
+    {{ form_row(form.email) }}
+    {{ form_row(form.fullName) }}
+    {{ form_row(form.roles) }}
     <hr>
-    {{ form_row(edit_form.plainPassword.first, {
+    {{ form_row(form.plainPassword.first, {
         label: "New Password"
     }) }}
-    {{ form_row(edit_form.plainPassword.second, {
+    {{ form_row(form.plainPassword.second, {
         label: "New Password Repeated"
     }) }}
 
-    <button class="btn btn-warning" formnovalidate>Edit <span class="glyphicon glyphicon-edit"></span>
+    <button class="main-button" formnovalidate>Edit
     </button>
 
-    {{ form_end(edit_form) }}
+    {{ form_end(form) }}
 {% endblock %}
+{% block body_class %}admin{% endblock %}

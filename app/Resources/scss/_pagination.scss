@@ -1,0 +1,29 @@
+.pagination {
+  text-align: center;
+  .current {
+    background: $primary-color;
+    padding: 1rem 2rem;
+  }
+}
+
+.pagination a, .pagination span {
+  padding: 0.5rem 1rem;
+  color: black;
+  background-color: $secondary-color;
+  margin: -0.1rem;
+  display: inline-block;
+}
+
+.pagination a {
+  &:hover {
+    background-color: $primary-color;
+    color: white;
+  }
+
+}
+
+.pagination span.active {
+  background-color: $primary-color;
+  color: white;
+}
+

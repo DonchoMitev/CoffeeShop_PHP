@@ -1,26 +1,41 @@
 {% extends "base.html.twig" %}
 {% block body_class %}admin{% endblock %}
 {% block main %}
-
-        <table>
-            <thead>
+    <h2>All users and options</h2>
+    <div>
+        {#<a href="{{ path("#") }}" class="main-button">Add new user</a>#}
+    </div>
+    <table>
+        <thead>
+        <tr>
+            <th>ID {{ knp_pagination_sortable(users, 'Sort', 'user.id') }}</th>
+            <th>Email {{ knp_pagination_sortable(users, 'Sort', 'user.email') }}</th>
+            <th>Full name {{ knp_pagination_sortable(users, 'Sort', 'user.fullName') }}</th>
+            <th>Roles</th>
+            <th>Options</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for user in users %}
             <tr>
-                <th>ID</th>
-                <th>Email</th>
-                <th>Role</th>
-                <th>Details</th>
+                <td>{{ user.id }}</td>
+                <td>{{ user.email }}</td>
+                <td>{{ user.fullName }}</td>
+                <td>{{ user.roles|join(", ") }}</td>
+                <td>
+                    <a href="{{ path("edit_user", {"id": user.id}) }}" class="main-button">Edit</a>
+                </td>
+                {#<td>#}
+                    {#<form action="{{ path("admin_delete_user", {"id": user.id}) }}" method="post">#}
+                        {#<button class="btn btn-danger delete-item" type="submit">Delete</button>#}
+                    {#</form>#}
+                {#</td>#}
             </tr>
-            </thead>
-            <tbody>
-            {% for user in users %}
-                <tr>
-                    <td>{{ user.id }}</td>
-                    <td>{{ user.email }}</td>
-                    <td>{{ user.roles[0] }}</td>
-                    <td><a href="{{ path('one_user', { 'id': user.id }) }}">Show Details</a></td>
-                </tr>
-            {% endfor %}
-            </tbody>
-        </table>
+        {% endfor %}
+        </tbody>
+    </table>
+    <div class="pagination">
+        {{ knp_pagination_render(users) }}
+    </div>
 
 {% endblock %}
