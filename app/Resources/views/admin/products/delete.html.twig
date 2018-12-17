@@ -12,7 +12,10 @@
         {{ form_row(form.quantity, { 'attr': {'placeholder': 'Quantity', 'disabled':'disabled'}}) }}
         {{ form_row(form.image, { 'attr': {'placeholder': 'Image', 'disabled':'disabled'}}) }}
         Are you sure?
-        {{ form_row(form.Save, { 'attr': {'class': 'main-button'}}) }}
+        <div class="button-container">
+            <a class="main-button" href="{{ path('all_products') }}">Cancel</a>
+            <button type="submit" class="main-button">Delete</button>
+        </div>
 
         {{ form_row(form._token) }}
     </fieldset>

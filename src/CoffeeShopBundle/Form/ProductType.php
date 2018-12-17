@@ -33,8 +33,8 @@ class ProductType extends AbstractType
                     "currency" => "EUR"
                 ])
             ->add('quantity', IntegerType::class)
-            ->add('image')
-            ->add('Save', SubmitType::class);
+            ->add('image');
+
     }/**
      * {@inheritdoc}
      */

@@ -3,14 +3,19 @@
 {% block main %}
     {{ form_start(form, { 'attr': {'class': 'main-form'}}) }}
     <fieldset>
-        <legend>Add New Product</legend>
+        <legend>Update Product</legend>
         {{ form_row(form.name, { 'attr': {'placeholder': 'Product Name'}}) }}
         {{ form_row(form.category, { 'attr': {'placeholder': 'Category'}}) }}
         {{ form_row(form.price, { 'attr': {'placeholder': 'Price in euro'}}) }}
         {{ form_row(form.description, { 'attr': {'placeholder': 'Description'}}) }}
         {{ form_row(form.quantity, { 'attr': {'placeholder': 'Quantity'}}) }}
         {{ form_row(form.image, { 'attr': {'placeholder': 'Image'}}) }}
-        {{ form_row(form.Save, { 'attr': {'class': 'main-button'}}) }}
+
+        <div class="button-container">
+            <a class="main-button" href="{{ path('all_products') }}">Cancel</a>
+            <button type="submit" class="main-button">Update</button>
+        </div>
+
 
         {{ form_row(form._token) }}
     </fieldset>

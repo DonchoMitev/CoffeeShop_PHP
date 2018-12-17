@@ -2,31 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="577252ab-391e-4905-8875-400c011d0e68" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Resources/scss/_pagination.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/CoffeeShopBundle/Controller/Admin/UsersController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/CoffeeShop_PHP.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/CoffeeShop_PHP.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/5256bd83-30b2-423e-b2c4-9ef0e73faf48.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/5256bd83-30b2-423e-b2c4-9ef0e73faf48.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/AppKernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/AppKernel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/scss/_forms.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/scss/_forms.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Resources/scss/_button.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/scss/_button.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Resources/scss/_layout.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/scss/_layout.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/scss/main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/scss/main.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/views/admin/categories/all_categories.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/admin/categories/all_categories.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Resources/scss/_tables.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/scss/_tables.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Resources/views/admin/products/add_product.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/admin/products/add_product.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Resources/views/admin/products/all_products.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/admin/products/all_products.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Resources/views/admin/products/delete.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/admin/products/delete.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Resources/views/admin/products/edit_product.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/admin/products/edit_product.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/views/admin/user.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/admin/users/user.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/views/admin/users/all_users.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/admin/users/all_users.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/views/admin/users/edit_user.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/admin/users/edit_user.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/config/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/app/config/config.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CoffeeShopBundle/Controller/Admin/AdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/CoffeeShopBundle/Controller/Admin/AdminController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CoffeeShopBundle/Entity/Category.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/CoffeeShopBundle/Entity/Category.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CoffeeShopBundle/Entity/Role.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/CoffeeShopBundle/Entity/Role.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CoffeeShopBundle/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/CoffeeShopBundle/Entity/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CoffeeShopBundle/Form/UserType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/CoffeeShopBundle/Form/UserType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CoffeeShopBundle/Repository/UserRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/CoffeeShopBundle/Repository/UserRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CoffeeShopBundle/Form/ProductType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/CoffeeShopBundle/Form/ProductType.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/css/main.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/css/main.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/web/css/main.css.map" afterDir="false" />
     </list>
@@ -72,23 +56,32 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ProductType.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/CoffeeShopBundle/Form/ProductType.php">
+      <file leaf-file-name="all_products.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Resources/views/admin/products/all_products.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="247">
-              <caret line="27" column="26" selection-start-line="27" selection-start-column="26" selection-end-line="27" selection-end-column="26" />
-              <folding>
-                <element signature="e#41#78#0#PHP" expanded="true" />
-              </folding>
+            <state relative-caret-position="369">
+              <caret line="36" column="41" selection-start-line="36" selection-start-column="41" selection-end-line="36" selection-end-column="41" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_pagination.scss" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/Resources/scss/_pagination.scss">
+      <file leaf-file-name="_tables.scss" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Resources/scss/_tables.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="23" selection-start-line="4" selection-start-column="23" selection-end-line="4" selection-end-column="23" />
+            <state relative-caret-position="34">
+              <caret line="2" column="21" selection-start-line="2" selection-start-column="21" selection-end-line="2" selection-end-column="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ProductType.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/CoffeeShopBundle/Form/ProductType.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="230">
+              <caret line="35" column="27" selection-start-line="35" selection-start-column="27" selection-end-line="35" selection-end-column="27" />
+              <folding>
+                <element signature="e#41#78#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -102,44 +95,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="all_users.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Resources/views/admin/users/all_users.html.twig">
+      <file leaf-file-name="add_product.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Resources/views/admin/products/add_product.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="33" column="20" selection-start-line="33" selection-start-column="20" selection-end-line="33" selection-end-column="20" />
+            <state relative-caret-position="255">
+              <caret line="15" column="37" selection-start-line="15" selection-start-column="37" selection-end-line="15" selection-end-column="37" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserType.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/CoffeeShopBundle/Form/UserType.php">
+      <file leaf-file-name="delete.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Resources/views/admin/products/delete.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="26" column="16" selection-start-line="26" selection-start-column="16" selection-end-line="26" selection-end-column="16" />
-              <folding>
-                <element signature="e#41#74#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Role.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/CoffeeShopBundle/Entity/Role.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="400">
-              <caret line="81" column="29" selection-start-line="81" selection-start-column="29" selection-end-line="81" selection-end-column="29" />
-              <folding>
-                <element signature="e#43#91#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="edit_user.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Resources/views/admin/users/edit_user.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="57" selection-start-line="5" selection-start-column="57" selection-end-line="5" selection-end-column="57" />
+            <state relative-caret-position="222">
+              <caret line="15" column="16" selection-start-line="14" selection-start-column="7" selection-end-line="17" selection-end-column="14" />
               <folding>
                 <element signature="e#12#26#0#Twig" expanded="true" />
               </folding>
@@ -147,36 +116,41 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ProductController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/CoffeeShopBundle/Controller/Admin/ProductController.php">
+      <file leaf-file-name="edit_product.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Resources/views/admin/products/edit_product.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="139">
-              <caret line="78" column="24" selection-start-line="60" selection-start-column="3" selection-end-line="87" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UsersController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/CoffeeShopBundle/Controller/Admin/UsersController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="343">
-              <caret line="82" column="49" selection-start-line="82" selection-start-column="49" selection-end-line="82" selection-end-column="49" />
+            <state relative-caret-position="85">
+              <caret line="5" column="22" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
               <folding>
-                <element signature="e#53#86#0#PHP" expanded="true" />
-                <element signature="e#2611#2644#0#PHP" expanded="true" />
+                <element signature="e#12#26#0#Twig" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Product.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/CoffeeShopBundle/Entity/Product.php">
+      <file leaf-file-name="_forms.scss" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Resources/scss/_forms.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-153">
-              <caret line="7" column="3" selection-start-line="7" selection-start-column="3" selection-end-line="7" selection-end-column="3" />
-              <folding>
-                <element signature="e#43#75#0#PHP" expanded="true" />
-              </folding>
+            <state relative-caret-position="272">
+              <caret line="16" column="25" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="25" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="_layout.scss" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Resources/scss/_layout.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="221">
+              <caret line="293" column="9" selection-start-line="293" selection-start-column="9" selection-end-line="293" selection-end-column="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="_button.scss" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Resources/scss/_button.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="1" column="24" selection-start-line="1" selection-start-column="24" selection-end-line="1" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -202,8 +176,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/Resources/views/default/index.html.twig" />
-        <option value="$PROJECT_DIR$/app/Resources/views/products/all_products.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/user/profile.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/security/login.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/admin/create_product.html.twig" />
@@ -226,10 +198,7 @@
         <option value="$PROJECT_DIR$/src/CoffeeShopBundle/Repository/CategoryRepository.php" />
         <option value="$PROJECT_DIR$/src/CoffeeShopBundle/Controller/Admin/CategoryController.php" />
         <option value="$PROJECT_DIR$/app/Resources/views/admin/categories/all.html.twig" />
-        <option value="$PROJECT_DIR$/src/CoffeeShopBundle/Form/ProductType.php" />
         <option value="$PROJECT_DIR$/src/CoffeeShopBundle/Controller/Admin/ProductController.php" />
-        <option value="$PROJECT_DIR$/app/Resources/views/admin/products/delete.html.twig" />
-        <option value="$PROJECT_DIR$/app/Resources/views/admin/products/add_product.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/admin/categories/add.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/admin/edit_user.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/admin/users/add_user.html.twig" />
@@ -240,19 +209,24 @@
         <option value="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
         <option value="$PROJECT_DIR$/src/CoffeeShopBundle/Controller/Admin/AdminController.php" />
         <option value="$PROJECT_DIR$/app/Resources/views/admin/categories/all_categories.html.twig" />
-        <option value="$PROJECT_DIR$/app/Resources/views/admin/products/all_products.html.twig" />
         <option value="$PROJECT_DIR$/src/CoffeeShopBundle/Entity/User.php" />
         <option value="$PROJECT_DIR$/src/CoffeeShopBundle/Entity/Category.php" />
         <option value="$PROJECT_DIR$/src/CoffeeShopBundle/Entity/Role.php" />
         <option value="$PROJECT_DIR$/app/Resources/views/admin/users/edit_user.html.twig" />
-        <option value="$PROJECT_DIR$/app/Resources/scss/_layout.scss" />
         <option value="$PROJECT_DIR$/app/Resources/scss/_forms.scss" />
         <option value="$PROJECT_DIR$/src/CoffeeShopBundle/Form/UserType.php" />
-        <option value="$PROJECT_DIR$/app/Resources/views/admin/products/edit_product.html.twig" />
         <option value="$PROJECT_DIR$/src/CoffeeShopBundle/Controller/Admin/UsersController.php" />
         <option value="$PROJECT_DIR$/app/Resources/views/admin/users/all_users.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/scss/main.scss" />
         <option value="$PROJECT_DIR$/app/Resources/scss/_pagination.scss" />
+        <option value="$PROJECT_DIR$/app/Resources/scss/_button.scss" />
+        <option value="$PROJECT_DIR$/app/Resources/views/admin/products/all_products.html.twig" />
+        <option value="$PROJECT_DIR$/src/CoffeeShopBundle/Form/ProductType.php" />
+        <option value="$PROJECT_DIR$/app/Resources/views/admin/products/delete.html.twig" />
+        <option value="$PROJECT_DIR$/app/Resources/views/admin/products/add_product.html.twig" />
+        <option value="$PROJECT_DIR$/app/Resources/views/admin/products/edit_product.html.twig" />
+        <option value="$PROJECT_DIR$/app/Resources/scss/_layout.scss" />
+        <option value="$PROJECT_DIR$/app/Resources/scss/_tables.scss" />
       </list>
     </option>
   </component>
@@ -547,12 +521,12 @@
       <workItem from="1544689722935" duration="6857000" />
       <workItem from="1544776949887" duration="3286000" />
       <workItem from="1544781378269" duration="15067000" />
-      <workItem from="1545031881559" duration="13916000" />
+      <workItem from="1545031881559" duration="17500000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="89395000" />
+    <option name="totallyTimeSpent" value="92979000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -600,16 +574,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/Resources/scss/_tables.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="11" column="3" selection-start-line="11" selection-start-column="3" selection-end-line="11" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/fontawesome/css/all.css">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/fontawesome/js/all.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -715,16 +679,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/admin/products/delete.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="103">
-          <caret line="8" column="100" lean-forward="true" selection-start-line="8" selection-start-column="100" selection-end-line="8" selection-end-column="100" />
-          <folding>
-            <element signature="e#12#26#0#Twig" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Resources/views/admin/categories/add_category.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -826,24 +780,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/admin/products/add_product.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="61" selection-start-line="5" selection-start-column="26" selection-end-line="5" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vendor/symfony/symfony/src/Symfony/Component/Form/Extension/Core/Type/IntegerType.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="127">
           <caret line="18" column="6" selection-start-line="18" selection-start-column="6" selection-end-line="18" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/admin/products/all_products.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="258">
-          <caret line="36" selection-start-line="36" selection-end-line="36" selection-end-column="41" />
         </state>
       </provider>
     </entry>
@@ -861,30 +801,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
           <caret line="13" column="23" selection-start-line="13" selection-start-column="23" selection-end-line="13" selection-end-column="23" />
-          <folding>
-            <element signature="e#12#26#0#Twig" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/scss/_layout.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="285" column="25" selection-start-line="285" selection-start-column="25" selection-end-line="285" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/scss/_forms.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="16" column="25" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/admin/products/edit_product.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="24" selection-start-line="16" selection-start-column="24" selection-end-line="16" selection-end-column="24" />
           <folding>
             <element signature="e#12#26#0#Twig" expanded="true" />
           </folding>
@@ -956,13 +872,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/CoffeeShopBundle/Form/ProductType.php">
+    <entry file="file://$PROJECT_DIR$/app/Resources/scss/_pagination.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="27" column="26" selection-start-line="27" selection-start-column="26" selection-end-line="27" selection-end-column="26" />
-          <folding>
-            <element signature="e#41#78#0#PHP" expanded="true" />
-          </folding>
+        <state relative-caret-position="153">
+          <caret line="9" column="23" selection-start-line="9" selection-start-column="23" selection-end-line="9" selection-end-column="23" />
         </state>
       </provider>
     </entry>
@@ -973,10 +886,75 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/scss/_pagination.scss">
+    <entry file="file://$PROJECT_DIR$/app/Resources/scss/_button.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="23" selection-start-line="4" selection-start-column="23" selection-end-line="4" selection-end-column="23" />
+        <state relative-caret-position="17">
+          <caret line="1" column="24" selection-start-line="1" selection-start-column="24" selection-end-line="1" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/admin/products/all_products.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="369">
+          <caret line="36" column="41" selection-start-line="36" selection-start-column="41" selection-end-line="36" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CoffeeShopBundle/Form/ProductType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="35" column="27" selection-start-line="35" selection-start-column="27" selection-end-line="35" selection-end-column="27" />
+          <folding>
+            <element signature="e#41#78#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/admin/products/delete.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="222">
+          <caret line="15" column="16" selection-start-line="14" selection-start-column="7" selection-end-line="17" selection-end-column="14" />
+          <folding>
+            <element signature="e#12#26#0#Twig" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/admin/products/add_product.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="37" selection-start-line="15" selection-start-column="37" selection-end-line="15" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/admin/products/edit_product.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="22" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
+          <folding>
+            <element signature="e#12#26#0#Twig" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/scss/_forms.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="25" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/scss/_layout.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="293" column="9" selection-start-line="293" selection-start-column="9" selection-end-line="293" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/scss/_tables.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="21" selection-start-line="2" selection-start-column="21" selection-end-line="2" selection-end-column="21" />
         </state>
       </provider>
     </entry>

@@ -11,6 +11,9 @@
   outline: none;
   text-shadow: 0 1px 0 rgba(0,0,0,0.16);
   box-shadow: $box-shadow;
+  a {
+    text-decoration: none;
+  }
 
   &:hover {
     background-color: #e74c3c;
@@ -18,3 +21,4 @@
     @include easeOut();
   }
 }
+
