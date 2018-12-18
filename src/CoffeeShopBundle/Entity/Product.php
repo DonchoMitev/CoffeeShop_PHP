@@ -2,6 +2,7 @@
 
 namespace CoffeeShopBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 
@@ -70,9 +71,17 @@ class Product
      */
     private $category;
 
+    /**
+     * @ORM\ManyToMany(targetEntity="CoffeeShopBundle\Entity\User", mappedBy="products")
+     *
+     * @var ArrayCollection
+     */
+    private $users;
+
     public function __construct()
     {
         $this->addedOn = new \DateTime();
+        $this->users = new ArrayCollection();
     }
 
     /**

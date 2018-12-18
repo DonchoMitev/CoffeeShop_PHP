@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="577252ab-391e-4905-8875-400c011d0e68" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/CoffeeShopBundle/Services/CartServiceInterface.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/CoffeeShopBundle/Services/CartService.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CoffeeShopBundle/Entity/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/CoffeeShopBundle/Entity/Product.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CoffeeShopBundle/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/CoffeeShopBundle/Entity/User.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -47,15 +49,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="all_products.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Resources/views/admin/products/all_products.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="369">
-              <caret line="36" column="41" selection-start-line="36" selection-start-column="41" selection-end-line="36" selection-end-column="41" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="_tables.scss" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Resources/scss/_tables.scss">
           <provider selected="true" editor-type-id="text-editor">
@@ -65,7 +58,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CartServiceInterface.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="CartServiceInterface.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/CoffeeShopBundle/Services/CartServiceInterface.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="241">
@@ -77,13 +70,25 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ProductType.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/CoffeeShopBundle/Form/ProductType.php">
+      <file leaf-file-name="CartService.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/CoffeeShopBundle/Services/CartService.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="230">
-              <caret line="35" column="27" selection-start-line="35" selection-start-column="27" selection-end-line="35" selection-end-column="27" />
+            <state relative-caret-position="519">
+              <caret line="111" column="26" lean-forward="true" selection-start-line="111" selection-start-column="26" selection-end-line="111" selection-end-column="26" />
               <folding>
-                <element signature="e#41#78#0#PHP" expanded="true" />
+                <element signature="e#130#166#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="User.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/CoffeeShopBundle/Entity/User.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="193">
+              <caret line="94" column="23" selection-start-line="94" selection-start-column="23" selection-end-line="94" selection-end-column="23" />
+              <folding>
+                <element signature="e#43#91#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -117,6 +122,18 @@
               <caret line="5" column="22" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
               <folding>
                 <element signature="e#12#26#0#Twig" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Product.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/CoffeeShopBundle/Entity/Product.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="83" column="45" selection-start-line="83" selection-start-column="45" selection-end-line="83" selection-end-column="45" />
+              <folding>
+                <element signature="e#43#91#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -182,7 +199,6 @@
         <option value="$PROJECT_DIR$/app/Resources/scss/_flashMsg.scss" />
         <option value="$PROJECT_DIR$/app/Resources/scss/_flashMsgs.scss" />
         <option value="$PROJECT_DIR$/src/CoffeeShopBundle/Entity/OrderProducts.php" />
-        <option value="$PROJECT_DIR$/src/CoffeeShopBundle/Entity/Product.php" />
         <option value="$PROJECT_DIR$/src/CoffeeShopBundle/Controller/CategoryController.php" />
         <option value="$PROJECT_DIR$/src/CoffeeShopBundle/Repository/CategoryRepository.php" />
         <option value="$PROJECT_DIR$/src/CoffeeShopBundle/Controller/Admin/CategoryController.php" />
@@ -198,7 +214,6 @@
         <option value="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
         <option value="$PROJECT_DIR$/src/CoffeeShopBundle/Controller/Admin/AdminController.php" />
         <option value="$PROJECT_DIR$/app/Resources/views/admin/categories/all_categories.html.twig" />
-        <option value="$PROJECT_DIR$/src/CoffeeShopBundle/Entity/User.php" />
         <option value="$PROJECT_DIR$/src/CoffeeShopBundle/Entity/Category.php" />
         <option value="$PROJECT_DIR$/src/CoffeeShopBundle/Entity/Role.php" />
         <option value="$PROJECT_DIR$/app/Resources/views/admin/users/edit_user.html.twig" />
@@ -218,6 +233,8 @@
         <option value="$PROJECT_DIR$/app/Resources/scss/_tables.scss" />
         <option value="$PROJECT_DIR$/app/Resources/scss/333.js" />
         <option value="$PROJECT_DIR$/src/CoffeeShopBundle/Services/CartServiceInterface.php" />
+        <option value="$PROJECT_DIR$/src/CoffeeShopBundle/Entity/Product.php" />
+        <option value="$PROJECT_DIR$/src/CoffeeShopBundle/Entity/User.php" />
         <option value="$PROJECT_DIR$/src/CoffeeShopBundle/Services/CartService.php" />
       </list>
     </option>
@@ -281,9 +298,9 @@
       <path value="$PROJECT_DIR$/vendor/knplabs/knp-components" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-26" />
-    <option name="y" value="118" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="416" />
+    <option name="y" value="17" />
     <option name="width" value="866" />
     <option name="height" value="708" />
   </component>
@@ -414,6 +431,20 @@
               <item name="CoffeeShop_PHP" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="CoffeeShopBundle" type="462c0819:PsiDirectoryNode" />
+              <item name="Controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CoffeeShop_PHP" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CoffeeShop_PHP" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="CoffeeShopBundle" type="462c0819:PsiDirectoryNode" />
+              <item name="Entity" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CoffeeShop_PHP" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CoffeeShop_PHP" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="CoffeeShopBundle" type="462c0819:PsiDirectoryNode" />
               <item name="Services" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -484,12 +515,12 @@
       <workItem from="1544689722935" duration="6857000" />
       <workItem from="1544776949887" duration="3286000" />
       <workItem from="1544781378269" duration="15067000" />
-      <workItem from="1545031881559" duration="19024000" />
+      <workItem from="1545031881559" duration="20462000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="94503000" />
+    <option name="totallyTimeSpent" value="95941000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -501,7 +532,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="416" y="17" width="866" height="708" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32952693" />
@@ -509,8 +540,8 @@
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32952693" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.32952693" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24357034" />
+      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.35008666" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24317618" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" weight="0.49621785" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32626426" />
@@ -734,16 +765,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/CoffeeShopBundle/Entity/User.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="275" selection-start-line="275" selection-end-line="275" />
-          <folding>
-            <element signature="e#43#91#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Resources/views/admin/categories/all_categories.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
@@ -768,16 +789,6 @@
           <folding>
             <element signature="e#53#86#0#PHP" expanded="true" />
             <element signature="e#2611#2644#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/CoffeeShopBundle/Entity/Product.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-153">
-          <caret line="7" column="3" selection-start-line="7" selection-start-column="3" selection-end-line="7" selection-end-column="3" />
-          <folding>
-            <element signature="e#43#75#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -912,17 +923,40 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/CoffeeShopBundle/Services/CartService.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret lean-forward="true" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/CoffeeShopBundle/Services/CartServiceInterface.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="241">
           <caret line="20" column="72" selection-start-line="20" selection-start-column="72" selection-end-line="20" selection-end-column="72" />
+          <folding>
+            <element signature="e#130#166#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CoffeeShopBundle/Entity/Product.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="83" column="45" selection-start-line="83" selection-start-column="45" selection-end-line="83" selection-end-column="45" />
+          <folding>
+            <element signature="e#43#91#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CoffeeShopBundle/Entity/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="193">
+          <caret line="94" column="23" selection-start-line="94" selection-start-column="23" selection-end-line="94" selection-end-column="23" />
+          <folding>
+            <element signature="e#43#91#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CoffeeShopBundle/Services/CartService.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="519">
+          <caret line="111" column="26" lean-forward="true" selection-start-line="111" selection-start-column="26" selection-end-line="111" selection-end-column="26" />
           <folding>
             <element signature="e#130#166#0#PHP" expanded="true" />
           </folding>

@@ -72,6 +72,14 @@ class User implements UserInterface
     private $roles;
 
     /**
+     * @var Product[]|ArrayCollection
+     *
+     * @ORM\ManyToMany(targetEntity="CoffeeShopBundle\Entity\Product", inversedBy="users")
+     * @ORM\JoinTable(name="cart")
+     */
+    private $products;
+
+    /**
      * @ORM\OneToMany(targetEntity="CoffeeShopBundle\Entity\OrderProducts", mappedBy="user")
      * @ORM\OrderBy({"date":"desc"})
      *
@@ -84,6 +92,7 @@ class User implements UserInterface
     {
         $this->roles = new ArrayCollection();
         $this->orders = new ArrayCollection();
+        $this->products = new ArrayCollection();
     }
 
     /**
@@ -272,6 +281,22 @@ class User implements UserInterface
     public function setOrders($orders)
     {
         $this->orders = $orders;
+    }
+
+    /**
+     * @return Product[]|ArrayCollection
+     */
+    public function getProducts()
+    {
+        return $this->products;
+    }
+
+    /**
+     * @param Product[]|ArrayCollection $products
+     */
+    public function setProducts($products)
+    {
+        $this->products = $products;
     }
 
 }
