@@ -24,11 +24,14 @@ class CartService implements CartServiceInterface
 
     public function __construct(
         EntityManagerInterface $entityManager,
-        SessionInterface $session)
+        SessionInterface $session,
+        OrderServiceInterface $orderService
+    )
 
     {
         $this->entityManager = $entityManager;
         $this->session = $session;
+        $this->orderService = $orderService;
     }
 
     /**
@@ -107,15 +110,15 @@ class CartService implements CartServiceInterface
 
         }
 
-//        $order = $this->orderService->createOrder(
-//            $user,
-//            new \DateTime(),
-//            $productsPlainText,
-//            $cartTotal);
-//        $this->entityManager->persist($order);
-//        $this->entityManager->persist($user);
-//        $this->entityManager->flush();
-//        $this->session->getFlashBag()->add("success", "Checkout completed! Enjoy your order!");
-//        return true;
+        $order = $this->orderService->createOrder(
+            $user,
+            new \DateTime(),
+            $productsPlainText,
+            $cartTotal);
+        $this->entityManager->persist($order);
+        $this->entityManager->persist($user);
+        $this->entityManager->flush();
+        $this->session->getFlashBag()->add("success", "Checkout completed! Enjoy your order!");
+        return true;
     }
 }

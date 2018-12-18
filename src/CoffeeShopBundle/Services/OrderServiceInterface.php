@@ -9,7 +9,13 @@
 namespace CoffeeShopBundle\Services;
 
 
+use CoffeeShopBundle\Entity\User;
+
 interface OrderServiceInterface
 {
-
+    public function createOrder(
+        User $user,
+        \DateTime $date,
+        array $products,
+        $total);
 }

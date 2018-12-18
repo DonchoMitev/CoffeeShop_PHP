@@ -5,6 +5,7 @@ namespace CoffeeShopBundle\Controller;
 use CoffeeShopBundle\Entity\Product;
 use CoffeeShopBundle\Entity\User;
 use CoffeeShopBundle\Services\CartServiceInterface;
+use CoffeeShopBundle\Services\OrderServiceInterface;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\RedirectResponse;
@@ -21,6 +22,7 @@ class CartController extends Controller
      * @var CartServiceInterface
      */
     private $cartService;
+
 
     public function __construct(CartServiceInterface $cartService)
     {
