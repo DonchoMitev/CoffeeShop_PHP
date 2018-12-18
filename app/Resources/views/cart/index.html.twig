@@ -3,11 +3,20 @@
 {% block body_class %}admin{% endblock %}
 
 {% block main %}
+
+    <header class="section-title page">
+        <h2 class="page-title">My Cart</h2>
+        <div class="flex-coffee-under">
+            <div class="hr-line"></div>
+            <div class="icon"><i class="fas fa-coffee"></i></div>
+            <div class="hr-line"></div>
+        </div>
+    </header>
     {% if cart|length > 0 %}
-        <table>
+        <table style="width: 100%;">
             <thead>
             <tr>
-                <th></th>
+                <th>No:</th>
                 <th>Product</th>
                 <th>Remove</th>
                 <th class="text-right">Price</th>
@@ -16,7 +25,7 @@
             <tbody>
             {% for product in cart %}
                 <tr class="{{ product.quantity == 0 ? "out-of-stock" : "" }}">
-                    {#<td><img class="cart-image" src="{{ vich_uploader_asset(product, "imageFile") }}" alt="Image"></td>#}
+                    <td><img style="width: 10rem" class="cart-image" src="/{{ product.image }}" alt="Image"></td>
                     <td>
                         {{ product.name }}
                         <p class="text-muted">In stock: {{ product.quantity }}</p>
@@ -26,11 +35,9 @@
                         </p>
                     </td>
                     <td>
-                        {#<form method="post" action="{{ path("user_cart_update", {"id": product.id}) }}">#}
-                            {#<button type="submit" class="btn btn-danger">#}
-                                {#<span class="glyphicon glyphicon-remove"></span>#}
-                            {#</button>#}
-                        {#</form>#}
+                        <form method="post" action="{{ path("remove_product_cart", {"id": product.id}) }}">
+                            <button type="submit" class="main-button">X</button>
+                        </form>
                     </td>
                     <td class="text-right"><strong>€{{ product.price }}</strong></td>
                 </tr>
@@ -45,10 +52,9 @@
             </tr>
             </tbody>
         </table>
-        {#<div class="text-right">#}
-            {#<a href="{{ path("user_cart_checkout") }}" class="btn btn-success btn-lg">Checkout <span#}
-                        {#class="glyphicon glyphicon-shopping-cart"></span></a>#}
-        {#</div>#}
+        <div class="text-right">
+            <a href="{{ path("finish_cart") }}" class="main-button">Finish</a>
+        </div>
     {% else %}
         <p>No products in your cart. Go shop something ;)</p>
     {% endif %}

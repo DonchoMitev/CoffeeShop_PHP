@@ -14,6 +14,7 @@ use CoffeeShopBundle\Entity\User;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
+use Symfony\Component\HttpFoundation\Session\Session;
 
 class CartService implements CartServiceInterface
 {
@@ -80,11 +81,12 @@ class CartService implements CartServiceInterface
         }
         $this->entityManager->persist($user);
         $this->entityManager->flush();
-        $this->session->getFlashBag()->add("success", "Cart updated!");
+        $this->session->getFlashBag()->add("success", "Product ".$product->getName()." remove from cart!");
     }
 
     /**
      * @param User $user
+     * @return bool
      */
     public function checkoutCart(User $user)
     {

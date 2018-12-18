@@ -1,0 +1,36 @@
+{% extends "base.html.twig" %}
+{% block body_class %}{% endblock %}
+{% block main %}
+    <div class="product">
+
+        <header>
+            <div>
+                <h1>{{ product.name }}</h1>
+                <h4>The best quality and garantee.</h4>
+            </div>
+        </header>
+
+
+        <img src="/{{ product.image }}">
+
+
+        <section>
+
+            <h4>Our products are awesomeeeee</h4>
+
+            <article>
+                <h5>Product Description</h5>
+                <p>
+                    {{ product.description }}
+                </p>
+                <p>
+                    {{ product.price }}
+                </p>
+            </article>
+
+            <a href="{{ path('add_product_cart', {'id': product.id}) }}" class="main-button">Add to Cart</a>
+
+        </section>
+
+    </div>
+{% endblock %}

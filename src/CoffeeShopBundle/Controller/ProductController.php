@@ -63,24 +63,19 @@ class ProductController extends Controller
 //            "category" => $category
 //        ]);
 //    }
-//    /**
-//     * @Route("/view/{slug}", name="products_view_product")
-//     *
-//     * @param Product $product
-//     * @return Response
-//     */
-//    public function viewProductAction(Product $product)
-//    {
-//        /** @var Review[] $reviews */
-//        $reviews = $product->getReviews();
-//        /** @var ProductCategory $category */
-//        $category = $product->getCategory();
-//        return $this->render("@WebShop/products/view_product.html.twig", [
-//            "product" => $product,
-//            "category_slug" => $category->getSlug(),
-//            "reviews" => $reviews
-//        ]);
-//    }
+    /**
+     * @Route("/view/{id}", name="view_product")
+     *
+     * @param Product $product
+     * @return Response
+     */
+    public function viewProductAction(Product $product)
+    {
+
+        return $this->render("/products/one_product.html.twig", [
+            "product" => $product,
+        ]);
+    }
 //    /**
 //     * @Route("/{id}/review", name="products_add_review")
 //     * @Security(expression="is_granted('IS_AUTHENTICATED_FULLY')")
