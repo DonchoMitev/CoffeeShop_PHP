@@ -2,17 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="577252ab-391e-4905-8875-400c011d0e68" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/src/CoffeeShopBundle/Services/CartServiceInterface.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/scss/_button.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/scss/_button.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/scss/_layout.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/scss/_layout.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/scss/_tables.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/scss/_tables.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/views/admin/products/add_product.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/admin/products/add_product.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/views/admin/products/all_products.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/admin/products/all_products.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/views/admin/products/delete.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/admin/products/delete.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/views/admin/products/edit_product.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/admin/products/edit_product.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CoffeeShopBundle/Form/ProductType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/CoffeeShopBundle/Form/ProductType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/css/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/css/main.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/web/css/main.css.map" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -65,11 +56,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_tables.scss" pinned="false" current-in-tab="true">
+      <file leaf-file-name="_tables.scss" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Resources/scss/_tables.scss">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="34">
               <caret line="2" column="21" selection-start-line="2" selection-start-column="21" selection-end-line="2" selection-end-column="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CartServiceInterface.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/CoffeeShopBundle/Services/CartServiceInterface.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="241">
+              <caret line="20" column="72" selection-start-line="20" selection-start-column="72" selection-end-line="20" selection-end-column="72" />
+              <folding>
+                <element signature="e#130#166#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -82,15 +85,6 @@
               <folding>
                 <element signature="e#41#78#0#PHP" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.scss" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Resources/scss/main.scss">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="13" column="17" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -146,16 +140,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_button.scss" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Resources/scss/_button.scss">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" column="24" selection-start-line="1" selection-start-column="24" selection-end-line="1" selection-end-column="24" />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -176,9 +168,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/Resources/views/user/profile.html.twig" />
-        <option value="$PROJECT_DIR$/app/Resources/views/security/login.html.twig" />
-        <option value="$PROJECT_DIR$/app/Resources/views/admin/create_product.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/admin/user.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/scss/_site-header.scss" />
         <option value="$PROJECT_DIR$/app/Resources/views/admin/all_products.html.twig" />
@@ -227,6 +216,9 @@
         <option value="$PROJECT_DIR$/app/Resources/views/admin/products/edit_product.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/scss/_layout.scss" />
         <option value="$PROJECT_DIR$/app/Resources/scss/_tables.scss" />
+        <option value="$PROJECT_DIR$/app/Resources/scss/333.js" />
+        <option value="$PROJECT_DIR$/src/CoffeeShopBundle/Services/CartServiceInterface.php" />
+        <option value="$PROJECT_DIR$/src/CoffeeShopBundle/Services/CartService.php" />
       </list>
     </option>
   </component>
@@ -422,36 +414,7 @@
               <item name="CoffeeShop_PHP" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="CoffeeShopBundle" type="462c0819:PsiDirectoryNode" />
-              <item name="Controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CoffeeShop_PHP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CoffeeShop_PHP" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="CoffeeShopBundle" type="462c0819:PsiDirectoryNode" />
-              <item name="Controller" type="462c0819:PsiDirectoryNode" />
-              <item name="Admin" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CoffeeShop_PHP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CoffeeShop_PHP" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="CoffeeShopBundle" type="462c0819:PsiDirectoryNode" />
-              <item name="Entity" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CoffeeShop_PHP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CoffeeShop_PHP" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="CoffeeShopBundle" type="462c0819:PsiDirectoryNode" />
-              <item name="Form" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CoffeeShop_PHP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CoffeeShop_PHP" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="CoffeeShopBundle" type="462c0819:PsiDirectoryNode" />
-              <item name="Repository" type="462c0819:PsiDirectoryNode" />
+              <item name="Services" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="CoffeeShop_PHP" type="b2602c69:ProjectViewProjectNode" />
@@ -521,12 +484,12 @@
       <workItem from="1544689722935" duration="6857000" />
       <workItem from="1544776949887" duration="3286000" />
       <workItem from="1544781378269" duration="15067000" />
-      <workItem from="1545031881559" duration="17500000" />
+      <workItem from="1545031881559" duration="19024000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="92979000" />
+    <option name="totallyTimeSpent" value="94503000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -539,14 +502,15 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32952693" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32952693" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.32952693" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24357034" />
+      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.32952693" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24357034" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" weight="0.49621785" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32626426" />
@@ -574,23 +538,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/web/fontawesome/js/all.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/default/index.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="799">
-          <caret line="47" column="38" selection-start-line="47" selection-start-column="38" selection-end-line="47" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/scss/_site-header.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2312">
-          <caret line="136" column="31" selection-start-line="136" selection-start-column="31" selection-end-line="136" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/CoffeeShopBundle/Controller/HomeController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
@@ -951,10 +898,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/scss/333.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/Resources/scss/_tables.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="21" selection-start-line="2" selection-start-column="21" selection-end-line="2" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CoffeeShopBundle/Services/CartService.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret lean-forward="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CoffeeShopBundle/Services/CartServiceInterface.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="241">
+          <caret line="20" column="72" selection-start-line="20" selection-start-column="72" selection-end-line="20" selection-end-column="72" />
+          <folding>
+            <element signature="e#130#166#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
