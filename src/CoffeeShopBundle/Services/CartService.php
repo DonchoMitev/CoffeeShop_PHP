@@ -13,7 +13,7 @@ use CoffeeShopBundle\Entity\Product;
 use CoffeeShopBundle\Entity\User;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\EntityManagerInterface;
-use Symfony\Component\HttpFoundation\Session\Session;
+use Symfony\Component\HttpFoundation\Session\SessionInterface;
 
 class CartService implements CartServiceInterface
 {
@@ -23,7 +23,7 @@ class CartService implements CartServiceInterface
 
     public function __construct(
         EntityManagerInterface $entityManager,
-        Session $session)
+        SessionInterface $session)
 
     {
         $this->entityManager = $entityManager;
