@@ -10,4 +10,9 @@ namespace CoffeeShopBundle\Repository;
  */
 class ProductRepository extends \Doctrine\ORM\EntityRepository
 {
+    public function findByQueryBuilder()
+    {
+        return $this->createQueryBuilder("product")
+            ->where("product.quantity > 0");
+    }
 }
