@@ -1,13 +1,21 @@
 {% extends 'base.html.twig' %}
 {% block body_class %}login{% endblock %}
 {% block main %}
-    <form name="authenticate" action="{{ path('security_login') }}" method="post">
+    <header class="section-title page">
+        <h2 class="page-title">Login</h2>
+        <div class="flex-coffee-under">
+            <div class="hr-line"></div>
+            <div class="icon"><i class="fas fa-coffee"></i></div>
+            <div class="hr-line"></div>
+        </div>
+    </header>
+    <form name="authenticate" class="main-form" action="{{ path('security_login') }}" method="post">
         {% if error %}
             <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
         {% endif %}
         <input type="text" value="{{ lastUserName }}" name="_username" placeholder="Username" required autofocus>
         <input type="password" name="_password">
         <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
-        <input type="submit" value="Login">
+        <input type="submit" class="main-button" value="Login">
     </form>
 {% endblock %}

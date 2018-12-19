@@ -1,9 +1,16 @@
 {% extends "base.html.twig" %}
 {% block body_class %}admin{% endblock %}
 {% block main %}
-    <h2>All users and options</h2>
+    <header class="section-title page">
+        <h2 class="page-title">All Users and Options</h2>
+        <div class="flex-coffee-under">
+            <div class="hr-line"></div>
+            <div class="icon"><i class="fas fa-coffee"></i></div>
+            <div class="hr-line"></div>
+        </div>
+    </header>
     <div>
-        {#<a href="{{ path("#") }}" class="main-button">Add new user</a>#}
+        <a href="{{ path("add_user") }}" class="main-button">Add new user</a>
     </div>
     <table>
         <thead>

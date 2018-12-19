@@ -1,24 +1,31 @@
 {% extends 'base.html.twig' %}
 
-{% block main_title %}Add new user{% endblock %}
+{% block body_class %}admin{% endblock %}
 
 {% block main %}
-    {{ form_start(edit_form) }}
 
-    {{ form_row(edit_form.email) }}
-    {{ form_row(edit_form.fullName) }}
-    {{ form_row(edit_form.funds) }}
-    {{ form_row(edit_form.roles) }}
+    <header class="section-title page">
+        <h2 class="page-title">Add new user</h2>
+        <div class="flex-coffee-under">
+            <div class="hr-line"></div>
+            <div class="icon"><i class="fas fa-coffee"></i></div>
+            <div class="hr-line"></div>
+        </div>
+    </header>
+    {{ form_start(form, { 'attr': {'class': 'main-form'}}) }}
+
+    {{ form_row(form.email) }}
+    {{ form_row(form.fullName) }}
+    {{ form_row(form.roles) }}
     <hr>
-    {{ form_row(edit_form.plainPassword.first, {
+    {{ form_row(form.plainPassword.first, {
         label: "New Password"
     }) }}
-    {{ form_row(edit_form.plainPassword.second, {
+    {{ form_row(form.plainPassword.second, {
         label: "New Password Repeated"
     }) }}
 
-    <button class="btn btn-success" formnovalidate>Add <span class="glyphicon glyphicon-plus-sign"></span>
-    </button>
+    <button class="main-button" formnovalidate>Add</button>
 
-    {{ form_end(edit_form) }}
+    {{ form_end(form) }}
 {% endblock %}

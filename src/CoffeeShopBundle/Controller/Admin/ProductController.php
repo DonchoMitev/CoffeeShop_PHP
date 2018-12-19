@@ -20,14 +20,26 @@ class ProductController extends Controller
 
 
     /**
-     * @Route("/all_products", name="all_products")
+     * @Route("/all_products", name="all_products_admin")
      * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function viewAllProducts()
+    public function viewAllProducts(Request $request)
     {
-        $products = $this->getDoctrine()->getRepository(Product::class)->findAll();
 
-        return $this->render('/admin/products/all_products.html.twig', ['products' => $products]);
+        $paginator = $this->get('knp_paginator');
+        /** Product[] $products */
+        $products = $paginator->paginate(
+            $this
+                ->getDoctrine()
+                ->getRepository(Product::class)
+                ->selectByIdAsc(),
+            $request->query->getInt('page', 1), 6
+
+        );
+
+        return $this->render("/admin/products/all_products.html.twig",
+            ["products" => $products]
+        );
     }
 
     /**
@@ -51,7 +63,7 @@ class ProductController extends Controller
 
             $this->addFlash("success", "Product {$product->getName()} added successfully.");
 
-            return $this->redirectToRoute("all_products");
+            return $this->redirectToRoute("all_products_admin");
         }
 
 
@@ -80,11 +92,11 @@ class ProductController extends Controller
 
             $this->addFlash("success", "Product {$product->getName()} updated successfully.");
 
-            return $this->redirectToRoute("all_products");
+            return $this->redirectToRoute("all_products_admin");
         }
 
 
-        return $this->render('admin/products/edit_product.html.twig', ['form' => $form->createView(), 'article' => $product]);
+        return $this->render('admin/products/edit_product.html.twig', ['form' => $form->createView(), 'product' => $product]);
     }
 
     /**
@@ -108,7 +120,7 @@ class ProductController extends Controller
             $em->flush();
 
             $this->addFlash("success", "Product {$product->getName()} deleted successfully.");
-            return $this->redirectToRoute("all_products");
+            return $this->redirectToRoute("all_products_admin");
         }
 
 

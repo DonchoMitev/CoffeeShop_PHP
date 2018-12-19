@@ -10,8 +10,13 @@ namespace CoffeeShopBundle\Repository;
  */
 class UserRepository extends \Doctrine\ORM\EntityRepository
 {
-    public function findByQueryBuilder()
+    public function selectByIdAsc()
     {
-        return $this->createQueryBuilder("user");
+        return $this->createQueryBuilder("user")
+            ->select('user')
+            ->orderBy('user.id', 'ASC');
+
+
+
     }
 }

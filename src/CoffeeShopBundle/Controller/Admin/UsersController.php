@@ -2,6 +2,7 @@
 
 namespace CoffeeShopBundle\Controller\Admin;
 
+use CoffeeShopBundle\Entity\Role;
 use CoffeeShopBundle\Entity\User;
 use CoffeeShopBundle\Form\UserType;
 use Symfony\Component\HttpFoundation\RedirectResponse;
@@ -33,7 +34,7 @@ class UsersController extends Controller
             $this
                 ->getDoctrine()
                 ->getRepository(User::class)
-                ->findByQueryBuilder(),
+                ->selectByIdAsc(),
             $request->query->getInt('page', 1), 6
 
         );
@@ -62,18 +63,19 @@ class UsersController extends Controller
      * @Route("/edit/{id}", name="edit_user")
      * @Security("is_granted('IS_AUTHENTICATED_FULLY')")
      * @param Request $request
-     * @param $id
+     * @param User $user
      * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function editAction(Request $request, $id)
+    public function editAction(Request $request, User $user)
     {
-        $user = $this->getDoctrine()->getRepository(User::class)->find($id);
         $form = $this->createForm(UserType::class, $user);
         $form->handleRequest($request);
 
 
         if ($form->isSubmitted() && $form->isValid()) {
 
+            /** @var User $user */
+            $user = $form->getData();
             $em = $this->getDoctrine()->getManager();
             $em->merge($user);
             $em->flush();
@@ -85,6 +87,37 @@ class UsersController extends Controller
 
 
         return $this->render('admin/users/edit_user.html.twig', ['form' => $form->createView(), 'user' => $user]);
+    }
+
+    /**
+     * @Route("/add", name="add_user")
+     * @param Request $request
+     * @return Response
+     */
+    public function addUserAction(Request $request)
+    {
+        $form = $this->createForm(UserType::class);
+        $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid()) {
+
+
+            /** @var User $user */
+            $user = $form->getData();
+            $password = $this->get('security.password_encoder')
+                ->encodePassword($user, $user->getPlainPassword());
+
+            $user->setPassword($password);
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($user);
+            $em->flush();
+
+            $this->addFlash("success", "User whit email => {$user->getEmail()} - added successfully!");
+
+            return $this->redirectToRoute("all_users");
+        }
+        return $this->render("/admin/users/add_user.html.twig", [
+            "form" => $form->createView()
+        ]);
     }
 
 

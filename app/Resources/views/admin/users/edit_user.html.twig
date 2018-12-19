@@ -1,8 +1,16 @@
 {% extends 'base.html.twig' %}
 
-{% block main_title %}Edit user{% endblock %}
+{% block body_class %}admin{% endblock %}
 
 {% block main %}
+    <header class="section-title page">
+        <h2 class="page-title">Edit user</h2>
+        <div class="flex-coffee-under">
+            <div class="hr-line"></div>
+            <div class="icon"><i class="fas fa-coffee"></i></div>
+            <div class="hr-line"></div>
+        </div>
+    </header>
     {{ form_start(form, { 'attr': {'class': 'main-form'}}) }}
 
     {{ form_row(form.email) }}
@@ -21,4 +29,3 @@
 
     {{ form_end(form) }}
 {% endblock %}
-{% block body_class %}admin{% endblock %}

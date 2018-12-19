@@ -107,6 +107,7 @@ class CartService implements CartServiceInterface
         foreach ($cartProducts as $product) {
             $product->setQuantity($product->getQuantity() - 1);
             $user->getProducts()->removeElement($product);
+            $productsPlainText[] = $product->getName();
 
         }
 

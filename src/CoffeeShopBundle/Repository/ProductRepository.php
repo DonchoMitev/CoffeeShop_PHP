@@ -15,4 +15,14 @@ class ProductRepository extends \Doctrine\ORM\EntityRepository
         return $this->createQueryBuilder("product")
             ->where("product.quantity > 0");
     }
+
+    public function selectByIdAsc()
+    {
+        return $this->createQueryBuilder("product")
+            ->select('product')
+            ->orderBy('product.id', 'ASC');
+
+    }
+
+
 }

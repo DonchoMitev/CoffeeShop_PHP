@@ -1,11 +1,17 @@
 {% extends 'base.html.twig' %}
 {% block body_class %}admin{% endblock %}
 {% block main %}
-
+    <header class="section-title page">
+        <h2 class="page-title">Add New Product</h2>
+        <div class="flex-coffee-under">
+            <div class="hr-line"></div>
+            <div class="icon"><i class="fas fa-coffee"></i></div>
+            <div class="hr-line"></div>
+        </div>
+    </header>
     <div class="container">
         {{ form_start(form, { 'attr': {'class': 'main-form'}}) }}
         <fieldset>
-            <legend>Add New Product</legend>
             {{ form_row(form.name, { 'attr': {'placeholder': 'Product Name'}}) }}
             {{ form_row(form.category, { 'attr': {'placeholder': 'Category'}}) }}
             {{ form_row(form.price, { 'attr': {'placeholder': 'Price in euro'}}) }}

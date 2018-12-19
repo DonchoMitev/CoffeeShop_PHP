@@ -3,6 +3,7 @@
 namespace CoffeeShopBundle\Form;
 
 use CoffeeShopBundle\Entity\Role;
+use CoffeeShopBundle\Entity\User;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
@@ -23,9 +24,9 @@ class UserType extends AbstractType
             ->add('email', TextType::class)
             ->add('fullName', TextType::class)
             ->add("roles", EntityType::class, [
-                "class" =>Role::class,
-                'choice_label'=>'name',
-                'placeholder'=>'Choose a role'
+                "class" => "CoffeeShopBundle\Entity\Role",
+                "multiple" => true,
+                "expanded" => true
             ])
             ->add('plainPassword', RepeatedType::class, array(
                 'type' => PasswordType::class,
@@ -39,7 +40,7 @@ class UserType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'CoffeeShopBundle\Entity\User'
+            'data_class' => User::class
         ));
     }
 
