@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block main %}
+    {{ form_start(edit_form, { 'attr': {'class': 'main-form'}}) }}
+
+    {{ form_row(edit_form.fullName) }}
+    <hr>
+    {{ form_row(edit_form.plainPassword.first, {
+        label: "New Password"
+    }) }}
+    {{ form_row(edit_form.plainPassword.second, {
+        label: "New Password Repeated"
+    }) }}
+
+    <button class="main-button" formnovalidate>Edit
+    </button>
+
+    {{ form_end(edit_form) }}
+{% endblock %}
+
+{% block body_class %}edit{% endblock %}
+
