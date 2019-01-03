@@ -2,6 +2,8 @@
 
 namespace CoffeeShopBundle\Repository;
 
+use Doctrine\ORM\QueryBuilder;
+
 /**
  * OrderProductsRepository
  *
@@ -10,4 +12,11 @@ namespace CoffeeShopBundle\Repository;
  */
 class OrderProductsRepository extends \Doctrine\ORM\EntityRepository
 {
+    /**
+     * @return QueryBuilder
+     */
+    public function findByQueryBuilder()
+    {
+        return $this->createQueryBuilder("products_order");
+    }
 }

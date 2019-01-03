@@ -3,6 +3,14 @@
 {% block body_class %}admin{% endblock %}
 
 {% block main %}
+    <header class="section-title page">
+        <h2 class="page-title">All Orders</h2>
+        <div class="flex-coffee-under">
+            <div class="hr-line"></div>
+            <div class="icon"><i class="fas fa-coffee"></i></div>
+            <div class="hr-line"></div>
+        </div>
+    </header>
     {% if orders|length > 0 %}
         <table class="table table-responsive table-striped">
             <thead>
@@ -11,7 +19,6 @@
                 <th>User</th>
                 <th>{{ knp_pagination_sortable(orders, 'Total', 'products_order.total') }}</th>
                 <th>Products</th>
-                <th>Complete</th>
             </tr>
             </thead>
             <tbody>
@@ -20,16 +27,7 @@
                     <td>{{ order.date|date }}</td>
                     <td>{{ order.user.fullName }}</td>
                     <td>€{{ order.total|number_format(2) }}</td>
-                    <td>{{ order.products|join("\n") }}</td>
-                    {#<td>#}
-                        {#{% if not order.verified %}#}
-                            {#<form action="{{ path("admin_verify_order", {"id": order.id}) }}" method="post">#}
-                                {#<button class="btn btn-success" type="submit">Complete</button>#}
-                            {#</form>#}
-                        {#{% else %}#}
-                            {#<button class="btn btn-default disabled">Complete</button>#}
-                        {#{% endif %}#}
-                    {#</td>#}
+                    <td>{{ order.products|join(", ") }}</td>
                 </tr>
             {% endfor %}
             </tbody>
@@ -38,6 +36,6 @@
             {{ knp_pagination_render(orders) }}
         </div>
     {% else %}
-        <p>No orders yet. Why not create one by yourself? :)</p>
+        <p>No orders yet.</p>
     {% endif %}
 {% endblock %}
