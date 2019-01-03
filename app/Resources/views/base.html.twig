@@ -82,8 +82,8 @@
                         </ul>
                     </li>
                     <!--<li><a href="/events/">Events</a></li>-->
-                    <li><a href="/blog/index.html">Blog</a></li>
-                    <li><a href="{{ path('view_cart') }}">My Cart</a></li>
+                    {#<li><a href="/blog/index.html">Blog</a></li>#}
+                    <li><a href="{{ path('view_cart') }}">My Cart <i class="fas fa-shopping-cart"></i></a></li>
                     <li><a href="/contacts/">Contacts</a></li>
                 </ul>
             </nav>
@@ -98,6 +98,7 @@
                     <ul>
                         <li><a href="{{ path('all_users') }}">Users(admin)</a></li>
                         <li><a href="{{ path('all_products_admin') }}">Products(admin)</a></li>
+                        <li><a href="{{ path('all_products_admin') }}">Orders(admin)</a></li>
                         <li><a href="{{ path('all_categories') }}">Categories(admin)</a></li>
                     </ul>
                 </nav>

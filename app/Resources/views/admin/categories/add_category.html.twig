@@ -3,7 +3,7 @@
 {% block body_class %}admin{% endblock %}
 
 {% block main %}
-    {{ form_start(form) }}
+    {{ form_start(form, { 'attr': {'class': 'main-form'}}) }}
 
     {{ form_row(form.name) }}
 

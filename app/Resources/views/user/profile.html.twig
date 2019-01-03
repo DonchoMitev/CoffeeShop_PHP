@@ -1,27 +1,32 @@
 {% extends 'base.html.twig' %}
 {% block body_class %}profile{% endblock %}
 {% block main %}
-    <div>
-        <div class="section-title">
-            <h3>Profile details:</h3>
+
+    <header class="section-title page">
+        <h2 class="page-title">My Profile</h2>
+        <div class="flex-coffee-under">
+            <div class="hr-line"></div>
+            <div class="icon"><i class="fas fa-coffee"></i></div>
+            <div class="hr-line"></div>
         </div>
-        <div class="panel-body">
-            <table>
-                <tr>
-                    <th>Email</th>
-                    <td>{{ user.email }}</td>
-                </tr>
-                <tr>
-                    <th>Name</th>
-                    <td>{{ user.fullName }}</td>
-                </tr>
-                <tr>
-                    <th>Roles</th>
-                    <td>{{ user.roles|join(", ") }}</td>
-                </tr>
-            </table>
-            <hr>
-            <a href="{{ path("user_profile_edit") }}" class="main-button">Edit </a>
-        </div>
+    </header>
+    <div class="panel-body">
+        <table>
+            <tr>
+                <th>Email</th>
+                <td>{{ user.email }}</td>
+            </tr>
+            <tr>
+                <th>Name</th>
+                <td>{{ user.fullName }}</td>
+            </tr>
+            <tr>
+                <th>Roles</th>
+                <td>{{ user.roles|join(", ") }}</td>
+            </tr>
+        </table>
+        <hr>
+        <a href="{{ path("user_profile_edit") }}" class="main-button">Edit </a>
     </div>
+
 {% endblock %}

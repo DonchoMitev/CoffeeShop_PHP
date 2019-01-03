@@ -38,6 +38,22 @@ class Category
      */
     private $products;
 
+    /**
+     * @return Product[]|ArrayCollection
+     */
+    public function getProducts()
+    {
+        return $this->products;
+    }
+
+    /**
+     * @param Product[]|ArrayCollection $products
+     */
+    public function setProducts($products)
+    {
+        $this->products = $products;
+    }
+
     public function __construct()
     {
         $this->products = new ArrayCollection();

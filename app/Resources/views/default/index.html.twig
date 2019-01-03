@@ -28,7 +28,7 @@
 
     <section class="top-products">
         <header class="section-title">
-            <h2 class="my">Top Products</h2>
+            <h2 class="my">New Products</h2>
             <div class="flex-coffee-under">
                 <div class="hr-line"></div>
                 <div class="icon"><i class="fas fa-coffee"></i></div>
@@ -45,9 +45,7 @@
                         <h3>{{ product.name }}</h3>
                         <p>{{ product.description }} </p>
                         <p>{{ product.price }} </p>
-                        <form action="">
-                            <input class="main-button" type="submit" value="Buy">
-                        </form>
+                        <a href="{{ path('view_product', {'id': product.id}) }}" class="main-button">View more</a>
                     </div>
                 </div>
             </article>

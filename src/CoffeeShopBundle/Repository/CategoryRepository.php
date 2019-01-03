@@ -21,4 +21,14 @@ class CategoryRepository extends \Doctrine\ORM\EntityRepository
             ->join("categories.products", "products")
             ->addSelect("products")->getQuery()->getResult();
     }
+
+    /**
+     * @return QueryBuilder
+     */
+    public function findByQueryBuilder()
+    {
+        return $this->createQueryBuilder("product_category")
+            ->join("product_category.products", "products")
+            ->addSelect("products");
+    }
 }

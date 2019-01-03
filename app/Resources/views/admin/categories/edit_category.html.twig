@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block body_class %}admin{% endblock %}
+
+{% block main %}
+    {{ form_start(form, { 'attr': {'class': 'main-form'}}) }}
+
+    {{ form_row(form.name) }}
+
+    <button class="main-button" formnovalidate>Edit</button>
+
+    {{ form_end(form) }}
+{% endblock %}

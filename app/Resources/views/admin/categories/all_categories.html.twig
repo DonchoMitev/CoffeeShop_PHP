@@ -1,17 +1,25 @@
 {% extends 'base.html.twig' %}
 
 {% block main %}
+    <header class="section-title page">
+        <h2 class="page-title">Category</h2>
+        <div class="flex-coffee-under">
+            <div class="hr-line"></div>
+            <div class="icon"><i class="fas fa-coffee"></i></div>
+            <div class="hr-line"></div>
+        </div>
+    </header>
     <div>
         <a href="{{ path("add_category") }}" class="main-button">Add new category</a>
     </div>
     <hr>
-    <table class="table table-responsive table-striped">
+    <table>
         <thead>
         <tr>
             <th>#</th>
             <th>Category Name</th>
             <th>Products count</th>
-            <th>Options</th>
+            <th colspan="2">Options</th>
         </tr>
         </thead>
         <tbody>
@@ -23,17 +31,17 @@
                 </td>
                 <td>{{ category|length }}</td>
                 <td>
-                    {#<a href="{{ path("admin_edit_category", {"slug": category.slug}) }}"#}
-                       {#class="btn btn-warning">Edit</a>#}
+                    <a href="{{ path("edit_category", {"id" : category.id}) }}"
+                       class="main-button">Edit</a>
                 </td>
                 <td>
-                    {#{% if category.products|length == 0 %}#}
-                        {#<form action="{{ path("admin_delete_category", {"id": category.id}) }}" method="post">#}
-                            {#<button class="btn btn-danger delete-item" type="submit">Delete</button>#}
-                        {#</form>#}
-                    {#{% else %}#}
-                        {#<button class="btn btn-default disabled" type="submit">Delete</button>#}
-                    {#{% endif %}#}
+                    {% if category.products|length == 0 %}
+                        <form action="{{ path("delete_category", {"id": category.id}) }}" method="post">
+                            <button class="main-button" type="submit">Delete</button>
+                        </form>
+                    {% else %}
+                        <button class="main-button" style="background-color: #565656; cursor: none" type="submit">Delete</button>
+                    {% endif %}
                 </td>
             </tr>
         {% endfor %}
