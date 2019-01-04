@@ -17,4 +17,20 @@ class HomeController extends Controller
         $products = $this->getDoctrine()->getRepository(Product::class)->findAll();
         return $this->render('default/index.html.twig', ['products' => $products]);
     }
+
+    /**
+     * @Route("/about", name="about")
+     */
+    public function aboutAction()
+    {
+        return $this->render('default/about.html.twig');
+    }
+
+    /**
+     * @Route("/contacts", name="contacts")
+     */
+    public function contactAction()
+    {
+        return $this->render('default/contacts.html.twig');
+    }
 }

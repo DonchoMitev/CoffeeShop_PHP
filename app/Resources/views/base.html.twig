@@ -71,20 +71,20 @@
             <nav class="main" id="main-navigation">
                 <ul>
                     <li><a href="/">Home</a></li>
-                    <li><a href="/about/">About Us</a></li>
+                    <li><a href="{{ path('about') }}">About Us</a></li>
                     <li>
                         <a href="{{ path('all_products') }}">All Products</a>
                         <ul>
-                            <li><a href="/beans/">Coffee beans</a></li>
+                            <li><a href="{{ path('products_by_category', {'cat': 'Coffee Beans'}) }}">Coffee beans</a></li>
                             <li>
-                                <a href="/machines/">Coffee machines</a>
+                                <a href="{{ path('products_by_category', {'cat': 'Coffee Machines'}) }}">Coffee machines</a>
                             </li>
                         </ul>
                     </li>
                     <!--<li><a href="/events/">Events</a></li>-->
                     {#<li><a href="/blog/index.html">Blog</a></li>#}
                     <li><a href="{{ path('view_cart') }}">My Cart <i class="fas fa-shopping-cart"></i></a></li>
-                    <li><a href="/contacts/">Contacts</a></li>
+                    <li><a href="{{ path('contacts') }}">Contacts</a></li>
                 </ul>
             </nav>
         </div>
@@ -153,9 +153,9 @@
 
                 <ul>
                     <li><a href="">Home</a></li>
-                    <li><a href="/about/">About</a></li>
+                    <li><a href="{{ path('about') }}">About</a></li>
                     <li><a href="/blog/index.html">Blog</a></li>
-                    <li><a href="/contacts/">Contacts</a></li>
+                    <li><a href="{{ path('contacts') }}">Contacts</a></li>
                 </ul>
             </section>
 

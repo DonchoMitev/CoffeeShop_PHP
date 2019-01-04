@@ -7,6 +7,7 @@ use CoffeeShopBundle\Entity\User;
 use CoffeeShopBundle\Services\CartServiceInterface;
 use CoffeeShopBundle\Services\OrderServiceInterface;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\Routing\Annotation\Route;
@@ -15,6 +16,8 @@ use Symfony\Component\Routing\Annotation\Route;
  * Class CartController
  * @package CoffeeShopBundle\Controller
  * @Route("/cart")
+ *
+ * @Security(expression="is_granted('IS_AUTHENTICATED_FULLY')")
  */
 class CartController extends Controller
 {

@@ -2,6 +2,7 @@
 
 namespace CoffeeShopBundle\Controller;
 
+use CoffeeShopBundle\Entity\Category;
 use CoffeeShopBundle\Entity\Product;
 use Doctrine\Common\Collections\ArrayCollection;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
@@ -39,30 +40,31 @@ class ProductController extends Controller
             "products" => $products
         ]);
     }
-//    /**
-//     * @Route("/category/{slug}", name="products_by_category")
-//     * @Method("GET")
-//     *
-//     * @param Request $request
-//     * @param ProductCategory $category
-//     * @return Response
-//     */
-//    public function listCategoryAction(Request $request, ProductCategory $category)
-//    {
-//        $pager = $this->get('knp_paginator');
-//        /** @var ArrayCollection|Product[] $products */
-//        $products = $pager->paginate(
-//            $this->getDoctrine()->getRepository(Product::class)
-//                ->findAllByCategoryQueryBuilder($category)
-//                ->orderBy("product.id", "desc"),
-//            $request->query->getInt('page', 1),
-//            6
-//        );
-//        return $this->render("@WebShop/products/list_by_category.html.twig", [
-//            "products" => $products,
-//            "category" => $category
-//        ]);
-//    }
+
+    /**
+     * @Route("/category/{cat}", name="products_by_category")
+     * @Method("GET")
+     *
+     * @param Request $request
+     *
+     * @param $cat
+     * @return Response
+     */
+    public function listCategoryAction(Request $request, $cat)
+    {   var_dump($cat);
+        $pager = $this->get('knp_paginator');
+        /** @var ArrayCollection|Product[] $products */
+        $products = $pager->paginate(
+            $this->getDoctrine()->getRepository(Product::class)
+                ->findAllByCategoryQueryBuilder($cat)
+                ->orderBy("product.id", "desc"),
+            $request->query->getInt('page', 1),
+            6
+        );
+        return $this->render("/products/list_by_category.html.twig", [
+            "products" => $products
+        ]);
+    }
     /**
      * @Route("/view/{id}", name="view_product")
      *

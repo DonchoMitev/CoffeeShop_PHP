@@ -2,6 +2,8 @@
 
 namespace CoffeeShopBundle\Repository;
 
+use CoffeeShopBundle\Entity\Category;
+
 /**
  * ProductRepository
  *
@@ -22,6 +24,14 @@ class ProductRepository extends \Doctrine\ORM\EntityRepository
             ->select('product')
             ->orderBy('product.id', 'ASC');
 
+    }
+
+    public function findAllByCategoryQueryBuilder($cat)
+    {
+        return $this->createQueryBuilder("product")
+            ->where("product.quantity > 0");
+//            ->andWhere("product.category = :cat")
+//            ->setParameter("cat", $cat);
     }
 
 
