@@ -23,7 +23,7 @@
             <th>Quantity</th>
             <th>Image</th>
             <th>Date Added</th>
-            <th>Options</th>
+            <th colspan="2">Options</th>
         </tr>
         </thead>
         <tbody>
@@ -36,7 +36,8 @@
                 <td>{{ product.quantity }}</td>
                 <td>{{ product.image }}</td>
                 <td>{{ product.addedOn | date }}</td>
-                <td><a href="{{ path('edit_product', { 'id': product.id }) }}" class="main-button">Edit</a> | <a href="{{ path('delete_product', { 'id': product.id }) }}" class="main-button">Delete</a> </td>
+                <td><a href="{{ path('edit_product', { 'id': product.id }) }}" class="main-button">Edit</a></td>
+                <td><a href="{{ path('delete_product', { 'id': product.id }) }}" class="main-button">Delete</a></td>
             </tr>
         {% endfor %}
         </tbody>

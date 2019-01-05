@@ -1,6 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block main %}
+    {#{% include "_categories_menu.html.twig" %}#}
     <section class="coffee-machines">
         <header class="section-title page">
             <h2 class="page-title">All Products</h2>
@@ -10,6 +11,16 @@
                 <div class="hr-line"></div>
             </div>
         </header>
+
+        <nav class="main" id="main-navigation">
+            <ul>
+                <li><a href="{{ path("products_by_category", {"category": "Coffee Machine"}) }}">Coffee Machine</a></li>
+                <li><a href="{{ path("products_by_category", {"category": "Coffee Beans"}) }}">Coffee Beans</a></li>
+            </ul>
+        </nav>
+        <div class="pagination">
+            {{ knp_pagination_render(products) }}
+        </div>
 
         <div class="machines flex">
             {% for product in products %}

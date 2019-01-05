@@ -38,6 +38,8 @@ class Category
      */
     private $products;
 
+
+
     /**
      * @return Product[]|ArrayCollection
      */

@@ -22,6 +22,16 @@ class CategoryRepository extends \Doctrine\ORM\EntityRepository
             ->addSelect("products")->getQuery()->getResult();
     }
 
+    public function getNonEmptyCategories()
+    {
+        return $this->createQueryBuilder("product_category")
+            ->join("product_category.products", "products")
+            ->addSelect("products")
+            ->orderBy("product_category.name", "ASC")
+            ->getQuery()
+            ->execute();
+    }
+
     /**
      * @return QueryBuilder
      */

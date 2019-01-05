@@ -26,12 +26,28 @@ class ProductRepository extends \Doctrine\ORM\EntityRepository
 
     }
 
-    public function findAllByCategoryQueryBuilder($cat)
+    public function selectNewProduct()
     {
-        return $this->createQueryBuilder("product")
-            ->where("product.quantity > 0");
-//            ->andWhere("product.category = :cat")
-//            ->setParameter("cat", $cat);
+
+        $q = $this->createQueryBuilder('product')
+            ->select('product')
+            ->orderBy('product.addedOn', 'DESC')
+            ->setMaxResults(6)
+            ->getQuery();
+
+        return $q->getResult();
+    }
+
+    public function findAllByCategoryQueryBuilder($id)
+    {
+        $q = $this->createQueryBuilder("product")
+            ->leftJoin("product.category", "c")
+            ->where("product.quantity > 0")
+            ->andWhere("c.id = :id")
+            ->setParameter("id", $id)
+            ->getQuery();
+
+        return $q->getResult();
     }
 
 

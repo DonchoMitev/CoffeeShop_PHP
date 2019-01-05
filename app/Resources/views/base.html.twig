@@ -46,9 +46,13 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="{{ path('security_logout') }}">
-                                    Logout
-                                </a>
+                            <li>
+                                <a href="{{ path('view_cart') }}">My Cart <i class="fas fa-shopping-cart"></i></a>
+                            </li>
+                            <li>
+                            <a href="{{ path('security_logout') }}">
+                                Logout
+                            </a>
                             </li>
                         {% else %}
                             <li>
@@ -74,16 +78,9 @@
                     <li><a href="{{ path('about') }}">About Us</a></li>
                     <li>
                         <a href="{{ path('all_products') }}">All Products</a>
-                        <ul>
-                            <li><a href="{{ path('products_by_category', {'cat': 'Coffee Beans'}) }}">Coffee beans</a></li>
-                            <li>
-                                <a href="{{ path('products_by_category', {'cat': 'Coffee Machines'}) }}">Coffee machines</a>
-                            </li>
-                        </ul>
                     </li>
                     <!--<li><a href="/events/">Events</a></li>-->
                     {#<li><a href="/blog/index.html">Blog</a></li>#}
-                    <li><a href="{{ path('view_cart') }}">My Cart <i class="fas fa-shopping-cart"></i></a></li>
                     <li><a href="{{ path('contacts') }}">Contacts</a></li>
                 </ul>
             </nav>
@@ -109,7 +106,7 @@
                 All you need to feel better is coffee
             </h1>
             <p>Make yourself useful. Have a coffee break.</p>
-            <form action="/machines/">
+            <form action="{{ path('all_products') }}">
                 <input class="main-button" type="submit" value="Best Offers">
             </form>
         </div>

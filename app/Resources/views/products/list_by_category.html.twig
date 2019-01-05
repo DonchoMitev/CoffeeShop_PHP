@@ -3,7 +3,7 @@
 {% block main %}
     <section class="coffee-machines">
         <header class="section-title page">
-            <h2 class="page-title">Beans</h2>
+            <h2 class="page-title">{{ category }}</h2>
             <div class="flex-coffee-under">
                 <div class="hr-line"></div>
                 <div class="icon"><i class="fas fa-coffee"></i></div>
@@ -11,12 +11,18 @@
             </div>
         </header>
 
+        <nav class="main" id="main-navigation">
+            <ul>
+                <li><a href="{{ path('all_products') }}"><< All Products</a></li>
+            </ul>
+        </nav>
+
         <div class="machines flex">
             {% for product in products %}
                 <article class="card">
                     <div class="wrapper-img">
                         <a target="_blank" href="">
-                            <img src="{{ product.image }}" alt="Cinque Terre">
+                            <img src="/{{ product.image }}" alt="Cinque Terre">
                         </a>
                     </div>
                     <div class="desc">
