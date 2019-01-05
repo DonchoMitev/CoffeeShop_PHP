@@ -54,7 +54,7 @@ class UserController extends Controller
 
             $this->addFlash(
                 'success',
-                'You succesfully registered, you can loggin now :)'
+                'You succesfully registered, you can loggin now.'
             );
 
             return $this->redirectToRoute("security_login");

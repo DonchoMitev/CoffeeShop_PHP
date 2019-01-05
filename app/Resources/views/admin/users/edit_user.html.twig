@@ -24,8 +24,8 @@
         label: "New Password Repeated"
     }) }}
 
-    <button class="main-button" formnovalidate>Edit
-    </button>
+    <a class="main-button" href="{{ path('all_users') }}">Cancel</a>
+    <button class="main-button" formnovalidate>Edit</button>
 
     {{ form_end(form) }}
 {% endblock %}

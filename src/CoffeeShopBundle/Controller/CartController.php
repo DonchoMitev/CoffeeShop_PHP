@@ -59,7 +59,7 @@ class CartController extends Controller
         $cartService = $this->cartService;
 
         if (!$cartService->addProductToCart($this->getUser(), $product)) {
-            return $this->redirectToRoute("homepage");
+            return $this->redirectToRoute("view_cart");
         }
         return $this->redirectToRoute("view_cart");
     }
